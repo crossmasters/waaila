@@ -1,0 +1,75 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "resourceGroupName": {
+            "type": "string",
+            "defaultValue": "WaailaAi",
+            "minLength": 5,
+            "metadata": {
+                "description": "WaailaAi resource group will be created, if you preffer another name change it. Please respect the resource group naming policy, otherwise the deployment will fail."
+            }
+        },
+        "workspaceId": {
+            "type": "string",
+            "maxLength": 36,
+            "minLength": 36,
+            "metadata": {
+                "description": "Guid of the workspace"
+            }
+        }
+    },
+    "functions": [],
+    "variables": {
+        "csName": "[concat('waaila-',parameters('workspaceId'))]",
+        "location": "[resourceGroup().location]"
+    },
+    "resources": [
+        {
+            "name": "string",
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2020-10-01",
+            "location": "string",
+            "tags": "[createObject('app','https://waaila.com')]",
+            "properties": {
+
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "name": "pid-bf33a503-6b77-5431-8e1f-fab4d3cfe2fe",
+            "apiVersion": "2019-10-01",
+            "resourceGroup": "[parameters('resourceGroupName')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Resources/resourceGroups/', parameters('resourceGroupName'))]"
+            ],
+            "properties": {
+                "mode": "Incremental",
+                "template": {
+                    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+                    "contentVersion": "1.0.0.0",
+                    "resources": [
+                        {
+                            "type": "Microsoft.CognitiveServices/accounts",
+                            "apiVersion": "2017-04-18",
+                            "name": "[variables('csName')]",
+                            "location": "[variables('location')]",
+                            "sku": {
+                                "name": "S1"
+                            },
+                            "kind": "AnomalyDetector",
+                            "properties": {
+                                "customSubDomainName": "[variables('csName')]",
+                                "privateEndpointConnections": [],
+                                "publicNetworkAccess": "Enabled"
+                            }
+                        }
+                    ],
+                    "outputs": {}
+                }
+            }
+
+        }
+    ],
+    "outputs": {}
+}
