@@ -21,7 +21,7 @@
     },
     "functions": [],
     "variables": {
-        "csName": "[concat('waaila-',parameters('workspaceId'))]",
+        "csName": "[concat('waaila-',parameters('workspaceId'))]"
     },
     "resources": [
         {
