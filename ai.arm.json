@@ -32,23 +32,22 @@
             "tags": "[createObject('app','https://waaila.com')]"
         },
         {
-            "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2019-10-01",
+            "apiVersion": "2020-06-01",
             "name": "pid-bf33a503-6b77-5431-8e1f-fab4d3cfe2fe",
+            "type": "Microsoft.Resources/deployments",
             "properties": {
                 "mode": "Incremental",
                 "template": {
-                    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/subscriptionDeploymentTemplate.json#",
+                    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
                     "contentVersion": "1.0.0.0",
-                    "resources": [
-                    ]
+                    "resources": []
                 }
             }
         },
         {
             "type": "Microsoft.Resources/deployments",
             "name": "CognitiveServices",
-            "apiVersion": "2019-10-01",
+            "apiVersion": "2020-06-01",
             "resourceGroup": "[parameters('resourceGroupName')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/resourceGroups/', parameters('resourceGroupName'))]"
