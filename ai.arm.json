@@ -17,13 +17,6 @@
             "metadata": {
                 "description": "Guid of the workspace"
             }
-        },
-        "location": {
-            "type": "string",
-            "defaultValue": "westeurope",
-            "metadata": {
-                "description": "Location"
-            }
         }
     },
     "functions": [],
@@ -35,7 +28,7 @@
             "name": "string",
             "type": "Microsoft.Resources/resourceGroups",
             "apiVersion": "2020-10-01",
-            "location": "[parameters('location')]",
+            "location": "[deployment().location]",
             "tags": "[createObject('app','https://waaila.com')]",
             "properties": {
 
@@ -59,7 +52,7 @@
                             "type": "Microsoft.CognitiveServices/accounts",
                             "apiVersion": "2017-04-18",
                             "name": "[variables('csName')]",
-                            "location": "[parameters('location')]",
+                            "location": "[deployment().location]",
                             "sku": {
                                 "name": "S1"
                             },
