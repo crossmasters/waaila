@@ -1,0 +1,1 @@
+Tento soubor je vytvořený ručně z info.md

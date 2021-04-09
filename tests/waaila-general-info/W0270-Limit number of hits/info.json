@@ -1,0 +1,59 @@
+{
+	"name": "Limit number of hits",
+	"code": "W0270",
+	"guid" : "c2f5ea6f-357d-4ea9-9ea2-be2e2691ef46",
+	"maxScore" : 70,
+	"testType" : "check",
+	"version" : 2,
+	"description" : "Free version of google analytics has a limit on number of hits it can collect. Ingesting more than 10 million hits a month per property has impact on how your data are processed and stored.  Also, measurement will be slow and larger sampling errors will appear than before. In worst case it might even happen that Google is going to delete your property. This however happens rarely and only if you ingest a lot more hits than this limit. More likely you will receive emails from Google Sales to think about a paid solution of Google Analytics 360.",
+	"lang" : "en",
+	"createdAt": "2020-06-01T00:00:00",
+	"consts": [
+		{
+			"const": "warnThreshold",
+			"type": "number",
+			"desc": "above 10 million hits free GA are not functioning optimally",
+			"default": 10000000
+		},
+		{
+			"const": "failThreshold",
+			"type": "number",
+			"desc": "hits very high above 10 millions increase the risk to have free GA property deleted",
+			"default": 20000000
+		}
+	],
+	"blocks": [
+		{
+			"block": "1",
+			"type": "assert",
+			"desc": "If more than failThreshold (20 millions) of hits for last 28 days was measured, the test fails.",
+			"assert": {
+				"score": 40,
+				"pass": {
+					"message": null
+				},
+				"fail": {
+					"message": "The limit of ${failThreshold/1000000} million hits was reached, actual number is: ${totalHitsMillions} millions",
+					"howtofix": "Consider upgrading to Google Analytics 360.",
+					"tabledescribe": null
+				}
+			}
+		},
+		{
+			"block": "2",
+			"type": "warn",
+			"desc": "If more than warnThreshold (10 millions) of hits for last 28 days was measured, test shows warning.",
+			"assert": {
+				"score": 30,
+				"pass": {
+					"message": "The number of hits is: ${totalHitsMillions} millions"
+				},
+				"fail": {
+					"message": "The limit of ${warnThreshold/1000000} million hits was reached, actual number is: ${totalHitsMillions} millions",
+					"howtofix": "If the traffic on your site is increasing, you may need to consider future upgrade to Google Analytics 360.",
+					"tabledescribe": null
+				}
+			}
+		}
+	]
+}
