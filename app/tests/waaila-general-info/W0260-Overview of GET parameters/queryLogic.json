@@ -1,36 +1,36 @@
-{
-    "requests": [{
-        "id": "parameters",
-        "queries": [{
-            "dateRanges": [
-                {
-                    "startDate": "28daysAgo",
-                    "endDate": "yesterday"
-                }],
-            "metrics": [
-                {
-                    "expression": "ga:pageViews"
-                }],
-            "dimensions": [
-                {
-                    "name": "ga:pagePath"
-                }],
-            "orderBys": [
-                {
-                    "fieldName": "ga:pageViews",
-                    "sortOrder": "DESCENDING"
-                }],
-            "dimensionFilterClauses": [
-                {
-                    "operator": "AND",
-                    "filters": [
-                        {
-                            "dimensionName": "ga:pagePath",
-                            "expressions": ["(\\?|&|#)"]
-                        }
-                    ]
-                }
-            ]
-        }]
-    }]
+{
+    "requests": [{
+        "id": "parameters",
+        "queries": [{
+            "dateRanges": [
+                {
+                    "startDate": "28daysAgo",
+                    "endDate": "yesterday"
+                }],
+            "metrics": [
+                {
+                    "expression": "ga:pageViews"
+                }],
+            "dimensions": [
+                {
+                    "name": "ga:pagePath"
+                }],
+            "orderBys": [
+                {
+                    "fieldName": "ga:pageViews",
+                    "sortOrder": "DESCENDING"
+                }],
+            "dimensionFilterClauses": [
+                {
+                    "operator": "AND",
+                    "filters": [
+                        {
+                            "dimensionName": "ga:pagePath",
+                            "expressions": ["(\\?|&|#)"]
+                        }
+                    ]
+                }
+            ]
+        }]
+    }]
 }

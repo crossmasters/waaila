@@ -1,3 +1,12 @@
+## Overview of GET parameters
+
+### Info 1
+
+Hello, this is some text to fill in this, [here](#info-2), is a link to the second place.
+
+
+```js
+
 (results, waaila) => {
     /**
     * @const {number} warnThreshold - above 10 million hits free GA are not functioning optimally
@@ -34,3 +43,12 @@
         .pass.message(warn_pass_message)
         .fail.message(warn_fail_message + '<br/><br/> How to fix: <br/>' +  warn_fail_howtofix).break;
 }
+```
+
+
+
+
+### Info 2
+
+Place one has the fun times of linking here, but I can also link back [here](#info-1).
+

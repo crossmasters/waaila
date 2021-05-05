@@ -1,3 +1,4 @@
+
 (results, waaila) => {
     /**
     * @const {number} warnThreshold - above 10 million hits free GA are not functioning optimally

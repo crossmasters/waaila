@@ -51,6 +51,6 @@
         keys = Array.from(new Set(keys));
 
         keys.forEach(function(e){
-            waaila.message(e)
+            waaila.message(e+""<br/>"")
             });
 }
