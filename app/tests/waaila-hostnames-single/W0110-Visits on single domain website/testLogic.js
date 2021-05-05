@@ -27,7 +27,7 @@
     const assert_pass_message = `Ratio of traffic on the most frequent hostname (${hostName}) to all traffic is higher than ${sessionThreshold*100}%`;
     const assert_fail_message = `Ratio of traffic on the most frequent hostname  (${hostName}) to all traffic is not higher than ${sessionThreshold*100} %`;
     const assert_fail_howtofix = 'Check if there is some filter for inclusion of hostnames applied, if not, create one. It should be an include filter with defined main hostname. ';
-    const assert_fail_tabledescribe = `Sample of largest hostnames (${Math.min(nrHostnamesDisplayed, hostnamesLength)} / ${hostnamesLength}):`; 
+    const assert_fail_tabledescribe = `Sample of largest hostnames (${Math.min(nrHostnamesDisplayed, hostnamesLength)} / ${hostnamesLength}):`;
     
     waaila.assert(maxSessions / totalSessions > sessionThreshold, 80)
         .pass.message(assert_pass_message)
