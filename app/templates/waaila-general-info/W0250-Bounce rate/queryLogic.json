@@ -1,0 +1,14 @@
+{
+  "requests": [{
+    "id": "bounceRate",
+    "queries": [{
+      "metrics": [{
+        "expression": "ga:bounceRate"
+      }],
+      "dateRanges": [{
+        "startDate": "28daysAgo",
+        "endDate": "yesterday"
+      }]
+    }]
+  }]
+}
