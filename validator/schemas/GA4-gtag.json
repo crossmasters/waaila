@@ -1,0 +1,438 @@
+{
+    "name": "gtag.js contexts",
+	"groups": [
+		{
+			"name": "Home Page",
+			"contexts": {
+                "view_item_list": { "$ref": "defs.json#/definitions/view_item_list" },
+                "view_promotion": { "$ref": "defs.json#/definitions/view_promotion" },
+                "select_content_promotion": { "$ref": "defs.json#/definitions/select_content_promotion" },
+                "select_content_product": { "$ref": "defs.json#/definitions/select_content_product" }
+			}
+		},
+        {
+			"name": "Product Page",
+			"contexts": {
+                "view_item_list": { "$ref": "defs.json#/definitions/view_item_list" },
+                "view_promotion": { "$ref": "defs.json#/definitions/view_promotion" },
+                "select_content_promotion": { "$ref": "defs.json#/definitions/select_content_promotion" },
+                "select_content_product": { "$ref": "defs.json#/definitions/select_content_product" },
+                "view_item": {
+                    "type": "object",
+                    "properties": {
+                        "0": { "$ref": "defs.json#/definitions/event" },
+                        "1": {
+                            "type": "string",
+                            "const": "view_item"
+                        },
+                        "2": {
+                            "type": "object",
+                            "properties": {
+                                "items": {
+                                    "type": "array",
+                                    "minItems": 1,
+                                    "maxItems": 1,
+                                    "items": {
+                                        "$ref": "defs.json#/definitions/itemList"
+                                    }
+                                }
+                            },
+                            "required": ["items"]
+                        }
+                    }, 
+                    "required": ["0", "1", "2"]
+                },
+                "add_to_cart": {
+                    "type": "object",
+                    "properties": {
+                        "0": { "$ref": "defs.json#/definitions/event" },
+                        "1": {
+                            "type": "string",
+                            "const": "add_to_cart"
+                        },
+                        "2": {
+                            "type": "object",
+                            "properties": {
+                                "currency": { "$ref": "defs.json#/definitions/currencyCode" },
+                                "value": { "type": "number" },
+                                "items": {
+                                    "type": "array",
+                                    "minItems": 1,
+                                    "maxItems": 1,
+                                    "items": {
+                                        "$ref": "defs.json#/definitions/itemList"
+                                    }
+                                }
+                            },
+                            "required": ["items", "value", "currency"]
+                        }
+                    }, 
+                    "required": ["0", "1", "2"]
+                },
+                "remove_from_cart": {
+                    "type": "object",
+                    "properties": {
+                        "0": { "$ref": "defs.json#/definitions/event" },
+                        "1": {
+                            "type": "string",
+                            "const": "remove_from_cart"
+                        },
+                        "2": {
+                            "type": "object",
+                            "properties": {
+                                "currency": { "$ref": "defs.json#/definitions/currencyCode" },
+                                "value": { "type": "number" },
+                                "items": {
+                                    "type": "array",
+                                    "minItems": 1,
+                                    "maxItems": 1,
+                                    "items": {
+                                        "$ref": "defs.json#/definitions/itemList"
+                                    }
+                                }
+                            },
+                            "required": ["items", "value", "currency"]
+                        }
+                    }, 
+                    "required": ["0", "1", "2"]
+                }
+			}
+		},
+        {
+			"name": "Checkout Page",
+			"contexts": {
+                "select_content_promotion": { "$ref": "defs.json#/definitions/select_content_promotion" },
+                "select_content_product": { "$ref": "defs.json#/definitions/select_content_product" },
+                "checkout_progress": {
+                    "type": "object",
+                    "properties": {
+                        "0": { "$ref": "defs.json#/definitions/event" },
+                        "1": {
+                            "type": "string",
+                            "const": "checkout_progress"
+                        },
+                        "2": {
+                            "type": "object",
+                            "properties": {
+                                "currency": { "$ref": "defs.json#/definitions/currencyCode" },
+                                "value": { "type": "number" },
+                                "checkout_step": { "type": "number" },
+                                "items": {
+                                    "type": "array",
+                                    "minItems": 1,
+                                    "maxItems": 999,
+                                    "items": {
+                                        "$ref": "defs.json#/definitions/itemList"
+                                    }
+                                }
+                            },
+                            "required": ["items", "value", "currency", "checkout_step"]
+                        }
+                    }, 
+                    "required": ["0", "1", "2"]
+                },
+                "remove_from_cart": {
+                    "type": "object",
+                    "properties": {
+                        "0": { "$ref": "defs.json#/definitions/event" },
+                        "1": {
+                            "type": "string",
+                            "const": "remove_from_cart"
+                        },
+                        "2": {
+                            "type": "object",
+                            "properties": {
+                                "currency": { "$ref": "defs.json#/definitions/currencyCode" },
+                                "value": { "type": "number" },
+                                "items": {
+                                    "type": "array",
+                                    "minItems": 1,
+                                    "maxItems": 999,
+                                    "items": {
+                                        "$ref": "defs.json#/definitions/itemList"
+                                    }
+                                }
+                            },
+                            "required": ["items", "value", "currency"]
+                        }
+                    }, 
+                    "required": ["0", "1", "2"]
+                },
+                "set_checkout_option": {
+                    "type": "object",
+                    "properties": {
+                        "0": { "$ref": "defs.json#/definitions/event" },
+                        "1": {
+                            "type": "string",
+                            "const": "set_checkout_option"
+                        },
+                        "2": {
+                            "type": "object",
+                            "properties": {
+                                "checkout_step": { "type": "number" },
+                                "checkout_option": { "type": "string" }
+                            },
+                            "required": ["checkout_step", "checkout_option"]
+                        }
+                    }, 
+                    "required": ["0", "1", "2"]
+                }
+			}
+		},
+        {
+			"name": "Purchase Page",
+			"contexts": {
+                "select_content_promotion": { "$ref": "defs.json#/definitions/select_content_promotion" },
+                "select_content_product": { "$ref": "defs.json#/definitions/select_content_product" },
+                "checkout_progress": {
+                    "type": "object",
+                    "properties": {
+                        "0": { "$ref": "defs.json#/definitions/event" },
+                        "1": {
+                            "type": "string",
+                            "const": "checkout_progress"
+                        },
+                        "2": {
+                            "type": "object",
+                            "properties": {
+                                "currency": { "$ref": "defs.json#/definitions/currencyCode" },
+                                "value": { "type": "number" },
+                                "checkout_step": { "type": "number" },
+                                "items": {
+                                    "type": "array",
+                                    "minItems": 0,
+                                    "maxItems": 999,
+                                    "items": {
+                                        "$ref": "defs.json#/definitions/itemList"
+                                    }
+                                }
+                            },
+                            "required": ["items", "value", "currency", "checkout_step"]
+                        }
+                    }, 
+                    "required": ["0", "1", "2"]
+                },
+                "purchase": {
+                    "type": "object",
+                    "properties": {
+                        "0": { "$ref": "defs.json#/definitions/event" },
+                        "1": {
+                            "type": "string",
+                            "const": "purchase"
+                        },
+                        "2": {
+                            "type": "object",
+                            "properties": {
+                                "transaction_id": { "type": "string" },
+                                "currency": { "$ref": "defs.json#/definitions/currencyCode" },
+                                "value": { "type": "number" },
+                                "tax": { "type": "number" },
+                                "shipping": { "type": "number" },
+                                "items": {
+                                    "type": "array",
+                                    "minItems": 1,
+                                    "maxItems": 999,
+                                    "items": {
+                                        "$ref": "defs.json#/definitions/itemList"
+                                    }
+                                }
+                            },
+                            "required": ["items", "value", "currency", "transaction_id", "tax", "shipping"] 
+                        }
+                    }, 
+                    "required": ["0", "1", "2"]
+                },
+                "refund": {
+                    "type": "object",
+                    "properties": {
+                        "0": { "$ref": "defs.json#/definitions/event" },
+                        "1": {
+                            "type": "string",
+                            "const": "refund"
+                        },
+                        "2": {
+                            "type": "object",
+                            "properties": {
+                                "transaction_id": { "type": "string" },
+                                "currency": { "$ref": "defs.json#/definitions/currencyCode" },
+                                "items": {
+                                    "type": "array",
+                                    "minItems": 0,
+                                    "maxItems": 999,
+                                    "items": {
+                                        "$ref": "defs.json#/definitions/itemRefund"
+                                    }
+                                }
+                            },
+                            "required": ["transaction_id"] 
+                        }
+                    }, 
+                    "required": ["0", "1", "2"]
+                }
+			}
+		}
+	],
+	"subschemas": {
+		"$id": "defs.json",
+		"definitions": {
+			"currencyCode": {
+				"type": "string",
+				"minLength": 3,
+				"maxLength": 3,
+				"pattern": "^(AED|AFN|ALL|AMD|ANG|AOA|ARS|AUD|AWG|AZN|BAM|BBD|BDT|BGN|BHD|BIF|BMD|BND|BOB|BRL|BSD|BTN|BWP|BYR|BZD|CAD|CDF|CHF|CLP|CNY|COP|CRC|CUC|CUP|CVE|CZK|DJF|DKK|DOP|DZD|EGP|ERN|ETB|EUR|FJD|FKP|GBP|GEL|GGP|GHS|GIP|GMD|GNF|GTQ|GYD|HKD|HNL|HRK|HTG|HUF|IDR|ILS|IMP|INR|IQD|IRR|ISK|JEP|JMD|JOD|JPY|KES|KGS|KHR|KMF|KPW|KRW|KWD|KYD|KZT|LAK|LBP|LKR|LRD|LSL|LYD|MAD|MDL|MGA|MKD|MMK|MNT|MOP|MRO|MUR|MVR|MWK|MXN|MYR|MZN|NAD|NGN|NIO|NOK|NPR|NZD|OMR|PAB|PEN|PGK|PHP|PKR|PLN|PYG|QAR|RON|RSD|RUB|RWF|SAR|SBD|SCR|SDG|SEK|SGD|SHP|SLL|SOS|SPL|SRD|STD|SVC|SYP|SZL|THB|TJS|TMT|TND|TOP|TRY|TTD|TVD|TWD|TZS|UAH|UGX|USD|UYU|UZS|VEF|VND|VUV|WST|XAF|XCD|XDR|XOF|XPF|YER|ZAR|ZMW|ZWD)$"
+			},
+            "event": {
+				"type": "string",
+				"const": "event"
+			},
+            "itemList": {
+				"type": "object",
+				"properties": {
+					"name": { "type": "string" },
+					"id": { "type": "string" },
+					"price": { "type": "number" },
+					"brand": { "type": "string" },
+					"category": { "type": "string" },
+                    "list_name": { "type": "string" },
+                    "list_position": { "type": "number" },
+                    "variant": { "type": "string" }
+				},
+				"required": [ 
+					"name", 
+					"id" 
+				],
+                "additionalProperties": false
+			},
+            "itemRefund": {
+				"type": "object",
+				"properties": {
+					"qunatity": { "type": "number" },
+					"id": { "type": "string" }
+				},
+				"required": [ 
+					"id" 
+				],
+                "additionalProperties": false
+			},
+            "promotion": {
+				"type": "object",
+				"properties": {
+					"id": { "type": ["string", "number" ]},
+                    "name": { "type": "string" },
+                    "creative_name": { "type": "string" },
+                    "creative_position": { "type": "string" }
+				},
+				"required": [ "id" ],
+				"additionalProperties": false
+			},
+            "view_item_list": {
+                "type": "object",
+                "properties": {
+                    "0": { "$ref": "defs.json#/definitions/event" },
+                    "1": {
+                        "type": "string",
+                        "const": "view_item_list"
+                    },
+                    "2": {
+                        "type": "object",
+                        "properties": {
+                            "items": {
+                                "type": "array",
+                                "minItems": 0,
+                                "maxItems": 999,
+                                "items": {
+                                    "$ref": "defs.json#/definitions/itemList"
+                                }
+                            }
+                        },
+                        "required": ["items"]
+                    }
+                }, 
+                "required": ["0", "1", "2"]
+            },
+            "view_promotion": {
+                "type": "object",
+                "properties": {
+                    "0": { "$ref": "defs.json#/definitions/event" },
+                    "1": {
+                        "type": "string",
+                        "const": "view_promotion"
+                    },
+                    "2": {
+                        "type": "object",
+                        "properties": {
+                            "promotions": {
+                                "type": "array",
+                                "minItems": 0,
+                                "maxItems": 1,
+                                "items": {
+                                    "$ref": "defs.json#/definitions/promotion"
+                                }
+                            }
+                        },
+                        "required": ["promotions"]
+                    }
+                }, 
+                "required": ["0", "1", "2"]
+            },
+            "select_content_promotion": {
+                "type": "object",
+                "properties": {
+                    "0": { "$ref": "defs.json#/definitions/event" },
+                    "1": {
+                        "type": "string",
+                        "const": "select_content"
+                    },
+                    "2": {
+                        "type": "object",
+                        "properties": {
+                            "content_type": {
+                                "type": "string",
+                                "const": "promotion"
+                            },
+                            "promotions": {
+                                "type": "array",
+                                "minItems": 0,
+                                "maxItems": 1,
+                                "items": {
+                                    "$ref": "defs.json#/definitions/promotion"
+                                }
+                            }
+                        },
+                        "required": ["promotions", "content_type"]
+                    }
+                }, 
+                "required": ["0", "1", "2"]
+            },
+            "select_content_product": {
+                "type": "object",
+                "properties": {
+                    "0": { "$ref": "defs.json#/definitions/event" },
+                    "1": {
+                        "type": "string",
+                        "const": "select_content"
+                    },
+                    "2": {
+                        "type": "object",
+                        "properties": {
+                            "content_type": {
+                                "type": "string",
+                                "const": "product"
+                            },
+                            "promotions": {
+                                "type": "array",
+                                "minItems": 0,
+                                "maxItems": 1,
+                                "items": {
+                                    "$ref": "defs.json#/definitions/itemList"
+                                }
+                            }
+                        },
+                        "required": ["promotions", "content_type"]
+                    }
+                }, 
+                "required": ["0", "1", "2"]
+            }
+		}
+	}
+}
