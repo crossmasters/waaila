@@ -1,0 +1,20 @@
+{
+        "requests": [{
+            "id": "sessions",
+            "queries": [{
+                "dateRanges": [
+                    {
+                        "startDate": "28daysAgo",
+                        "endDate": "yesterday"
+                    },{
+                        "startDate": "7daysAgo",
+                        "endDate": "yesterday"
+                    }
+                ],
+                "metrics": [
+                    {
+                        "expression": "ga:sessions"
+                    }
+                ]
+            }]
+        }]}
