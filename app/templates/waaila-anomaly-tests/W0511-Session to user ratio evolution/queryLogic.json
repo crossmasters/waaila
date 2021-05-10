@@ -1,0 +1,32 @@
+{
+  "requests": [
+    {
+      "id": "inputData",
+      "queries": [
+        {
+          "dateRanges": [
+            {
+              "startDate": "63daysAgo",
+              "endDate": "yesterday"
+            }
+          ],
+          "metrics": [
+            {
+              "expression": "ga:sessions/ga:users",
+              "alias": "ga:sessionUserRatio",
+              "formattingType": "FLOAT"
+            }
+          ],
+          "dimensions": [
+            {
+              "name": "ga:deviceCategory"
+            },
+            {
+              "name": "ga:date"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

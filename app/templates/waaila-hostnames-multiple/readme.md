@@ -1,4 +1,4 @@
-# Hostnames (multi-domain) - SAMPLE  
+# Hostnames (multi-domain)  
 ## Main info:  
 **data provider code:** ga-reporting-v4  
 **version:** 1  

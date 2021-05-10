@@ -1,6 +1,6 @@
 {
     "requests": [{
-        "id": "hostnameSessions",
+        "id": "hostnameTransactions",
         "queries": [{
             "dateRanges": [
                 {
@@ -9,18 +9,17 @@
                 }],
             "metrics": [
                 {
-                    "expression": "ga:sessions"
+                    "expression": "ga:transactions"
                 }],
             "dimensions": [
                 {
                     "name": "ga:hostname"
-                }], 
-            "orderBys": [ 
+                }],
+            "orderBys": [
                 {
-                    "fieldName": "ga:sessions",
+                    "fieldName": "ga:transactions",
                     "sortOrder": "DESCENDING"
-                    }
-            ]
+                }]
         }]
     }]
 }

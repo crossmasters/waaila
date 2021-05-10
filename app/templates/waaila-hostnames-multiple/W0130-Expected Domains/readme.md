@@ -17,7 +17,7 @@ You can run the test first with the default parameters. When running with the de
 **example:** ["main-domain.com", "other-domain.com"]  
 ### permittedDomainsArray
 **type:** array  
-**description:** list of all domains that are allowed to be present in the data  
+**description:** list of all domains that are allowed to be present in the data (N/A denotes undefined value)  
 **example:** ["main-domain.com", "other-domain.com", "N/A"]  
 ## Blocks:  
 ### 1 - assert

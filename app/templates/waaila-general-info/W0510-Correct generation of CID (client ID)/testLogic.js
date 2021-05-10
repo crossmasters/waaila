@@ -24,5 +24,8 @@
     const assert_fail_message = `There is an unusually low number of users compared to visits for some devices: ${selectedDeviceArrayJoined} (the share of users to sessions is below the threshold of ${sessionUserThreshold})`;
     const assert_fail_howtofix = 'Check that pageview measurement is triggered correctly.';
     const assert_fail_tabledescribe = 'Table with ratios by device type';
-    waaila.assert(typeof selectedDeviceArray[0] === 'undefined', 150).pass.message(assert_pass_message).fail.message(assert_fail_message + '<br/><br/> How to fix: <br/>' +  assert_fail_howtofix + '<br/>' + assert_fail_tabledescribe).table(sessionUserRatio).break;
+    waaila.assert(typeof selectedDeviceArray[0] === 'undefined', 150)
+        .pass.message(assert_pass_message)
+        .fail.message(assert_fail_message + '<br/><br/> How to fix: <br/>' +  assert_fail_howtofix 
+            + '<br/>' + assert_fail_tabledescribe).table(sessionUserRatio).break;
 }

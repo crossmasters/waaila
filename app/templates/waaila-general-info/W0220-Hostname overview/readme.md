@@ -10,4 +10,4 @@ Table of all hostnames including metrics like sessions, transactions, pageviews 
 ## Blocks:  
 ### 1 - info
 **description:** Table of all hostnames including metrics like sessions, transactions and pageviews   
-**score:** 40  
+**score:** 0  

@@ -1,0 +1,58 @@
+{
+    "requests": [
+        {
+            "id": "hostnameSessions",
+            "queries": [{
+                "dateRanges": [
+                    {
+                        "startDate": "28daysAgo",
+                        "endDate": "yesterday"
+                    }],
+                "metrics": [
+                    {
+                        "expression": "ga:sessions"
+                    },
+                    {
+                        "expression": "ga:transactions"
+                    }],
+                "dimensions": [
+                    {
+                        "name": "ga:hostname"
+                    }],
+                "orderBys": [
+                    {
+                        "fieldName": "ga:sessions",
+                        "sortOrder": "DESCENDING"
+                    }]
+            }]
+        },
+        {
+            "id": "aggregTransactions",
+            "queries": [{
+                "dateRanges": [
+                    {
+                        "startDate": "28daysAgo",
+                        "endDate": "yesterday"
+                    }],
+                "metrics": [
+                    {
+                        "expression": "ga:transactions"
+                    }]
+            }]
+        },
+        {
+            "id": "filterTransactions",
+            "queries": [{
+                "dateRanges": [{
+                    "startDate": "28daysAgo",
+                    "endDate": "yesterday"
+                }],
+                "metrics": [
+                    {
+                        "expression": "ga:transactions"
+                    }],
+                "filtersExpression": "ga:hostname=={{ results['hostnameSessions'][0].data.rows ? results['hostnameSessions'][0].data.rows[0].dimensions[0] : 'undefined' }}"
+            }]
+        }
+    ]
+}

@@ -1,12 +1,12 @@
 (results, waaila) => {
-    // Run the test once and based on the results configure the following arrays
+    // Run the test once and based on the results configure the following arrays (more information on https://github.com/crossmasters/waaila/tree/master/app/templates/waaila-hostnames-multiple/W0130-Expected%20Domains#further-information)
     /**
     * @const {array} necessaryDomainsArray - list of domains that are required to be present in the data
     * @default ['main-domain.com', 'other-domain.com']
     */
     const necessaryDomainsArray = ['main-domain.com', 'other-domain.com']; 
     /**
-    * @const {array} permittedDomainsArray - list of all domains that are allowed to be present in the data
+    * @const {array} permittedDomainsArray - list of all domains that are allowed to be present in the data (N/A denotes undefined value)
     * @default ['main-domain.com', 'other-domain.com', 'N/A']
     */
     const permittedDomainsArray = ['main-domain.com', 'other-domain.com', 'N/A']; 

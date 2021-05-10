@@ -6,7 +6,7 @@
     const lowerThreshold = 10;
     /**
     * @const {number} upperThreshold - upper bound to bounce rate in percentages
-    * @default 90
+    * @default 95
     */
     const upperThreshold = 95;
 
