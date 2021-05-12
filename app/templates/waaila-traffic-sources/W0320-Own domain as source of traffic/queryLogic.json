@@ -1,0 +1,49 @@
+{
+        "requests": [
+    {
+        "id": "hostnameSessions",
+        "queries": [{
+        "dateRanges": [
+            {
+            "startDate": "28daysAgo",
+            "endDate": "yesterday"
+            }],
+        "metrics": [
+            {
+            "expression": "ga:sessions"
+            }],           
+        "dimensions": [
+            {
+            "name": "ga:hostname"
+            }],
+        "orderBys": [
+            {
+            "fieldName": "ga:sessions",
+            "sortOrder": "DESCENDING"
+            }]
+        }]
+    },
+    {
+        "id": "sourceFilteredSessions",
+        "queries": [{
+        "dateRanges": [{
+            "startDate": "28daysAgo",
+            "endDate": "yesterday"
+            }],
+        "metrics": [
+            {
+            "expression": "ga:sessions"
+            }],
+        "dimensions": [
+            {
+            "name": "ga:source"
+            }],
+        "orderBys": [
+            {
+            "fieldName": "ga:source",
+            "sortOrder": "DESCENDING"
+            }],
+        "filtersExpression": "ga:medium==referral & ga:source=={{ results['hostnameSessions'][0].data.rows[0].dimensions[0] }}"
+        }]
+    }
+    ]}

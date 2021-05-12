@@ -1,0 +1,52 @@
+{
+  "requests": [{
+    "id": "sourceSessions",
+    "queries": [{
+        "dateRanges": [
+            {
+                "startDate": "28daysAgo",
+                "endDate": "yesterday"
+            }],
+        "metrics": [
+            {
+                "expression": "ga:sessions"
+            }],
+        "dimensions": [
+            {
+                "name": "ga:fullReferrer"
+            },{
+                "name": "ga:source"
+            }],
+        "filtersExpression": "ga:fullReferrer=~(facebook.*auth)|ga:source=@accounts.google.com"
+    }, {
+            "dateRanges": [
+                {
+                    "startDate": "28daysAgo",
+                    "endDate": "yesterday"
+                }],
+            "metrics": [
+                {
+                    "expression": "ga:sessions"
+                }],
+            "dimensions": [
+                {
+                    "name": "ga:fullReferrer"
+                }]
+        },
+        {
+            "dateRanges": [
+                {
+                    "startDate": "28daysAgo",
+                    "endDate": "yesterday"
+                }],
+            "metrics": [
+                {
+                    "expression": "ga:sessions"
+                }],
+            "dimensions": [
+                {
+                    "name": "ga:source"
+                }]
+        }]
+}]
+}

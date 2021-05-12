@@ -16,7 +16,7 @@
     const minExpectedSessions = 100;
     
     /**
-    * @assert 1 - Analyze presence of anomalies
+    * @assert 1 - Analyze presence of anomalies in sessions by hostname
     * @score 80
     */
     const inputData = waaila.functions.normalizeGaResult(results['inputData'][0]);

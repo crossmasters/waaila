@@ -1,0 +1,17 @@
+{
+  "requests": [{
+    "id": "clicks",
+    "queries": [{
+      "metrics": [{
+        "expression": "ga:adClicks"
+      },
+      {
+        "expression": "ga:sessions"
+      }],
+      "dateRanges": [{
+        "startDate": "28daysAgo",
+        "endDate": "yesterday"
+      }]
+    }]
+  }]
+}

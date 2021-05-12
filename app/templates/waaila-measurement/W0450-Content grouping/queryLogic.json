@@ -1,0 +1,35 @@
+{
+  "requests": [{
+    "id": "contentGroups",
+    "queries": [{
+        "dateRanges": [
+            {
+                "startDate": "28daysAgo",
+                "endDate": "yesterday"
+            }],
+        "metrics": [
+            {
+                "expression": "ga:pageviews"
+            }],
+        "dimensions": [
+            {
+                "name": "ga:contentGroup1"
+            },{
+                "name": "ga:contentGroup2"
+            },{
+                "name": "ga:contentGroup3"
+            },{
+                "name": "ga:contentGroup4"
+            },{
+                "name": "ga:contentGroup5"
+            }
+        ],
+            "orderBys": [
+                {
+                    "fieldName": "ga:pageviews",
+                    "sortOrder": "DESCENDING"
+                }],
+        "pageSize": 30
+    }]
+  }]
+}

@@ -1,0 +1,26 @@
+{
+        "requests": [{
+            "id": "viewClicks",
+            "queries": [{
+            "dateRanges": [
+                {
+                "startDate": "28daysAgo",
+                "endDate": "yesterday"
+                }],
+            "metrics": [
+                {
+                "expression": "ga:productListClicks"
+                },
+                {
+                "expression": "ga:productListViews"
+                }],
+            "dimensions": [
+                {
+                "name": "ga:productListName"
+                }], 
+             "orderBys": [{
+                    "fieldName": "ga:productListClicks", 
+                    "sortOrder": "DESCENDING"
+                }]
+            }]
+        }]}

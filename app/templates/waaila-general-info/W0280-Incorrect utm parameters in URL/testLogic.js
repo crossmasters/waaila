@@ -6,7 +6,7 @@
     const nrPagesDisplayed = 10;
     
     /**
-    * @warn 1 - It checks presence of data for pageviews by page path
+    * @warn 1 - Loads data and checks for presence of data for pageviews by page path
     * @score 0
     */
     const filteredPageViews = waaila.functions.normalizeGaResult(results['pageViews'][0]);
@@ -36,5 +36,5 @@
         .pass.message(assert_pass_message)
         .fail.message(assert_fail_message + '<br/><br/> How to fix: <br/>' +  assert_fail_howtofix 
             + '<br/><br/>' + assert_fail_tabledescribe)
-        .table(filteredPageViews.head(nrPagesDisplayed)).break;
+        .table(filteredPageViews.head(nrPagesDisplayed));
 }

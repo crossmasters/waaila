@@ -1,0 +1,34 @@
+{
+  "columns": [
+    "src_type",
+    "src",
+    "p1.m_visits",
+    "p2.m_visits"
+  ],
+  "sort": [
+    "-p1.m_visits"
+  ],
+  "space": {
+    "s": [
+      "[code]"
+    ]
+  },
+  "period": {
+    "p1": [
+      {
+        "type": "R",
+        "granularity": "D",
+        "offset": -1
+      }
+    ],
+    "p2": [
+      {
+        "type": "R",
+        "granularity": "D",
+        "offset": -8
+      }
+    ]
+  },
+  "max-results": 50,
+  "page-num": 1
+}

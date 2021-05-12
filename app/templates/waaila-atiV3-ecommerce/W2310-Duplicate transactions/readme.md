@@ -9,7 +9,7 @@
 If duplicate transactions are in your data, the same data will be evaluated more than once and bias your measurement. The transactionID must be unique for every transaction made on website.   
 ## Blocks:  
 ### 1 - warn
-**description:** It checks presence of transaction data  
+**description:** Loads data and checks for presence of transaction data  
 **score:** 0  
 **fail message:** No data returned for transactions  
 ### 2 - assert

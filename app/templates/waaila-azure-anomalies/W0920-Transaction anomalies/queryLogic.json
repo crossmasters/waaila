@@ -1,0 +1,40 @@
+{
+  "requests": [
+    {
+      "id": "inputData",
+      "queries": [
+        {
+          "dateRanges": [
+            {
+              "startDate": "63daysAgo",
+              "endDate": "yesterday"
+            }
+          ],
+          "metrics": [
+            {
+              "expression": "ga:transactions"
+            },
+            {
+              "expression": "ga:itemRevenue"
+            },
+            {
+              "expression": "ga:itemQuantity"
+            }
+          ],
+          "dimensions": [
+            {
+              "name": "ga:date"
+            }
+          ],
+          "orderBys": [
+            {
+              "fieldName": "ga:date",
+              "sortOrder": "ASCENDING"
+            }
+          ],
+          "includeEmptyRows": true
+        }
+      ]
+    }
+  ]
+}

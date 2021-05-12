@@ -1,0 +1,32 @@
+{
+	"entity": {
+		"propertyId": "[propertyId]"
+	},
+	"dateRanges": [
+		{
+			"startDate": "28daysAgo",
+			"endDate": "yesterday"
+		}
+	],
+	"metrics": [
+		{
+			"name": "sessions"
+		}
+	],
+	"dimensions": [
+		{
+			"name": "date"
+		}
+	],
+	"orderBys": [
+		{
+			"metric": {
+				"metricName": "sessions"
+			},
+			"desc": true
+		}
+	],
+	"metricAggregations": [
+		"TOTAL"
+	]
+}

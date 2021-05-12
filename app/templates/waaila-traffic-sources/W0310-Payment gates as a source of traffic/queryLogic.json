@@ -1,0 +1,55 @@
+{
+  "requests": [{
+    "id": "paymentGates",
+    "queries": [{
+        "dateRanges": [
+            {
+                "startDate": "28daysAgo",
+                "endDate": "yesterday"
+            }],
+        "metrics": [
+            {
+                "expression": "ga:sessions"
+            }],
+        "dimensions": [
+            {
+                "name": "ga:source"
+            }],
+        "dimensionFilterClauses": [{
+            "operator": "OR",
+            "filters": [{
+                "not": false,
+                "dimensionName": "ga:source",
+                "operator": "REGEXP",
+                "expressions": ["paypal.com|pa­yu.com|secure­.avangate.com|mer­chant.webmo­ney.ru|checkou­t.wire­card.com|worldpa­y.com|ups.com|so­fort.com|(acs­.)?fio.cz|mban­k.eu|internet-­banka.cz|moje­platba.cz|eras­vet.cz|paysec­.cz"]
+            },
+            {
+                "not": false,
+                "dimensionName": "ga:source",
+                "operator": "REGEXP",
+                "expressions": ["gpesecure­.com|i-shop.homecredit­.cz|gopay|gpweb­pay|servis24­.cz|klient(1|2)­.rb.cz|unicre­ditbanking.net|ta­trabanka.sk | pla­tebnibrana.csob­.cz | mbank.pl | 3dse­cure.mbank.(cz | sk) | ban­kmillennium.pl | on­line.ingbank.pl"]
+            },
+            {
+                "not": false,
+                "dimensionName": "ga:source",
+                "operator": "REGEXP",
+                "expressions": ["e­bank.db-pbc.pl|ingban­k.pl|aliorban­k.pl|cap.attem­pts.securecode­.com|3dsecure2?­.csas.cz|ib24­.csob.cz|(ib | 3dse­cure).slsp­.sk | acs4.3dse­cure.no|platebnibrana.csob.cz"]
+            }]
+        }]
+    }, {
+        "dateRanges": [
+            {
+                "startDate": "28daysAgo",
+                "endDate": "yesterday"
+            }],
+        "metrics": [
+            {
+                "expression": "ga:sessions"
+            }],
+        "dimensions": [
+            {
+                "name": "ga:source"
+            }]
+        }]
+    }]
+}

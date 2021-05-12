@@ -1,0 +1,35 @@
+{
+  "requests": [{
+        "id": "transactions",
+        "queries": [{
+            "dateRanges": [
+                {
+                    "startDate": "28daysAgo",
+                    "endDate": "yesterday"
+                }],
+            "metrics": [
+                {
+                    "expression": "ga:itemQuantity"
+                }],
+            "dimensions": [
+                {
+                    "name": "ga:transactionId"
+                }],
+            "filtersExpression": "ga:itemQuantity==0"
+        }, {
+            "dateRanges": [
+                {
+                    "startDate": "28daysAgo",
+                    "endDate": "yesterday"
+                }],
+            "metrics": [
+                {
+                    "expression": "ga:itemQuantity"
+                }],
+            "dimensions": [
+                {
+                    "name": "ga:transactionId"
+                }]
+        }]
+    }]
+}

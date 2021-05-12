@@ -24,5 +24,5 @@
     waaila.assert(pageViews == 0, 80)
         .pass.message(assert_pass_message)
         .fail.message(assert_fail_message + '<br/><br/> How to fix: <br/>' +  assert_fail_howtofix + '<br/><br/>' + assert_fail_tabledescribe)
-        .table(filteredPageViews.head(nrPagesDisplayed)).break;
+        .table(filteredPageViews.head(nrPagesDisplayed));
 }

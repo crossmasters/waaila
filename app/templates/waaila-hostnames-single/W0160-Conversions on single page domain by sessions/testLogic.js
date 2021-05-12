@@ -11,7 +11,7 @@
     const nrHostnamesDisplayed = 10;
 
     /**
-    * @warn 1 - It checks presence of transaction data
+    * @warn 1 - Loads data and checks for presence of transaction data
     * @score 0
     */
     const hostnameSessions = waaila.functions.normalizeGaResult(results['hostnameSessions'][0]);
@@ -37,5 +37,5 @@
         .pass.message(assert_pass_message)
         .fail.message(assert_fail_message + '<br/><br/> How to fix: <br/>' +  assert_fail_howtofix 
             + '<br/><br/> ' + assert_fail_tabledescribe)
-        .table(hostnameSessions.head(nrHostnamesDisplayed)).break;
+        .table(hostnameSessions.head(nrHostnamesDisplayed));
 }

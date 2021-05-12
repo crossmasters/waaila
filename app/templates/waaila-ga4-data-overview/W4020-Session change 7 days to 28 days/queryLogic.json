@@ -1,0 +1,23 @@
+{
+	"entity": {
+		"propertyId": "[propertyId]"
+	},
+	"dateRanges": [
+		{
+			"startDate": "28daysAgo",
+			"endDate": "yesterday"
+		},
+        {
+			"startDate": "7daysAgo",
+			"endDate": "yesterday"
+		}
+	],
+	"metrics": [
+		{
+			"name": "sessions"
+		}
+	],
+	"metricAggregations": [
+		"TOTAL"
+	]
+}

@@ -11,15 +11,15 @@
     */
     const transactionsHighDiff = waaila.functions.normalizeAtiResult(results[0]);
     const transactionsHighDiffSummary = waaila.functions.summarizeAtiResult(results[0]);
-    
+
     const transactionsLowDiff = waaila.functions.normalizeAtiResult(results[1]);
     const transactionsLowDiffSummary = waaila.functions.summarizeAtiResult(results[1]);
     
-    const maxDiff = transactionsHighDiffSummary['Difference (m_transactions_turnover_withtax - m_prod_turnover_withtax)']['maximum'];
-    const minDiff = transactionsLowDiffSummary['Difference (m_transactions_turnover_withtax - m_prod_turnover_withtax)']['minimum'];
+    const maxDiff = transactionsHighDiffSummary['Difference (Turnover incl. tax (transaction) - Turnover incl. tax (product))']['maximum'];
+    const minDiff = transactionsLowDiffSummary['Difference (Turnover incl. tax (transaction) - Turnover incl. tax (product))']['minimum'];
     
-    const transactionsDiff = transactionsHighDiff.filter(row => +row['Difference (m_transactions_turnover_withtax - m_prod_turnover_withtax)'] > permittedSumDeviation)
-        .concat(transactionsLowDiff.filter(row => +row['Difference (m_transactions_turnover_withtax - m_prod_turnover_withtax)'] < - permittedSumDeviation));
+    const transactionsDiff = transactionsHighDiff.filter(row => +row['Difference (Turnover incl. tax (transaction) - Turnover incl. tax (product))'] > permittedSumDeviation)
+        .concat(transactionsLowDiff.filter(row => +row['Difference (Turnover incl. tax (transaction) - Turnover incl. tax (product))'] < - permittedSumDeviation));
     const assert_pass_message = 'For all orders the sum of products in order equals to the value of whole order.';
     const assert_fail_message = 'There are orders, by which the sum of products in order does not equal to the value of whole order.';
     const assert_fail_howtofix = 'You need to check the measurement of order value.';
@@ -27,5 +27,5 @@
     waaila.assert((maxDiff <= permittedSumDeviation) || (minDiff >= - permittedSumDeviation), 150)
         .pass.message(assert_pass_message)
         .fail.message(assert_fail_message + '<br/><br/> How to fix: <br/>' +  assert_fail_howtofix 
-            + '<br/><br/> ' + assert_fail_tabledescribe).table(transactionsDiff).break;   
+            + '<br/><br/> ' + assert_fail_tabledescribe).table(transactionsDiff);
 }

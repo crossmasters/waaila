@@ -18,7 +18,7 @@ In a single domain website, most of the traffic shall be aligned to only one hos
 **example:** 10  
 ## Blocks:  
 ### 1 - warn
-**description:** It checks presence of data for sessions by hostname  
+**description:** Loads data and checks for presence of data for sessions by hostname  
 **score:** 0  
 **fail message:** No data returned for sessions by hostname.  
 ### 2 - assert
@@ -26,5 +26,5 @@ In a single domain website, most of the traffic shall be aligned to only one hos
 **score:** 80  
 **pass message:** Ratio of traffic on the most frequent hostname (${hostName}) to all traffic is higher than ${sessionThreshold\*100} %  
 **fail message:** Ratio of traffic on the most frequent hostname  (${hostName}) to all traffic is not higher than ${sessionThreshold\*100} %  
-**how to fix message:** Check if there is some filter for inclusion of hostnames applied, if not, create one. It should be an include filter with defined main hostname.   
+**how to fix message:** Check if there is some filter for inclusion of hostnames applied, if not, create one. It should be an include filter with defined main hostname.  
 **description of table displayed in case of failure:** Sample of largest hostnames (${Math.min(nrHostnamesDisplayed, hostnamesLength)} / ${hostnamesLength})  

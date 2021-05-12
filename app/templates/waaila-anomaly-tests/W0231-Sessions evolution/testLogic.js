@@ -10,7 +10,7 @@
     };
 
     /**
-    * @assert 1 - Analyze presence of anomalies
+    * @assert 1 - Analyze presence of anomalies in sessions
     * @score 150
     */
     const inputData = waaila.functions.normalizeGaResult(results['inputData'][0]);

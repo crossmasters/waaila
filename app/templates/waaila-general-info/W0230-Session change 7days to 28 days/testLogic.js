@@ -23,5 +23,6 @@
     const assert_pass_message = `Sessions this week do not differ significantly from weekly average last month (they are between ${lowerRatioThreshold*100} and ${upperRatioThreshold*100} % of average sessions for a week)`;
     const assert_fail_message = `Sessions this week are not between ${lowerRatioThreshold*100} and ${upperRatioThreshold*100} % of average sessions for a week`;
     const assert_fail_howtofix = 'Check, if the GA code is triggered on the website.';
-    waaila.assert((sessions7d > sessions7avg * lowerRatioThreshold) && (sessions7d < sessions7avg * upperRatioThreshold), 150).pass.message(assert_pass_message).fail.message(assert_fail_message + '<br/><br/> How to fix: <br/>' +  assert_fail_howtofix).break;
+    waaila.assert((sessions7d > sessions7avg * lowerRatioThreshold) && (sessions7d < sessions7avg * upperRatioThreshold), 150)
+        .pass.message(assert_pass_message).fail.message(assert_fail_message + '<br/><br/> How to fix: <br/>' +  assert_fail_howtofix);
 }

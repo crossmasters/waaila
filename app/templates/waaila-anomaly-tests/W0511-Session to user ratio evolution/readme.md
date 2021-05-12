@@ -14,7 +14,7 @@ For each device there must be significantly more sessions than users. If the rat
 **example:** "{valueColumn: 'sessions', dimensions: ['deviceCategory']}"  
 ## Blocks:  
 ### 1 - assert
-**description:** Analyze presence of anomalies  
+**description:** Analyze presence of anomalies in session to user ratio by device category  
 **score:** 80  
 **pass message:** No anomalies detected in the ${valueColumnName}  
 **fail message:** There was an anomaly in the ${valueColumnName}  

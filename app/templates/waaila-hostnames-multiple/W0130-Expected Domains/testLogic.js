@@ -17,7 +17,7 @@
     */
     const hostnameSessions = waaila.functions.normalizeGaResult(results['hostnameSessions'][0]);
     
-    currentDomainsArray = hostnameSessions['data'].map(function (row){ 
+    currentDomainsArray = hostnameSessions.map(function (row){ 
         return row['hostname'];
     });
     let missingDomainsArray = necessaryDomainsArray.filter(function (domain) {
@@ -33,13 +33,13 @@
     * @assert 2 - Check that there is no unexpected domain included.
     * @score 60
     */ 
-    hostnameSessions['data'] = hostnameSessions['data'].filter(function (row) {
+    const hostnameSessionsFiltered = hostnameSessions.filter(function (row) {
         return permittedDomainsArray.includes(row['hostname']) == false;
 
     });
     
     const assert_pass_message_unexpected = 'No unexpected domains are measured in the data.';
     const assert_fail_message_unexpected = 'There are some sessions on unexpected domains:';
-    waaila.assert((typeof hostnameSessions['data'][0] === 'undefined'), 60)
-        .pass.message(assert_pass_message_unexpected).fail.message(assert_fail_message_unexpected).table(hostnameSessions); 
+    waaila.assert((typeof hostnameSessionsFiltered[0] === 'undefined'), 60)
+        .pass.message(assert_pass_message_unexpected).fail.message(assert_fail_message_unexpected).table(hostnameSessionsFiltered); 
 }

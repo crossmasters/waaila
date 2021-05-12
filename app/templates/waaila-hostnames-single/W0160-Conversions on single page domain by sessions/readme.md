@@ -18,7 +18,7 @@ In a single domain website, most of the sessions shall be aligned to only one ho
 **example:** 10  
 ## Blocks:  
 ### 1 - warn
-**description:** It checks presence of transaction data  
+**description:** Loads data and checks for presence of transaction data  
 **score:** 0  
 ### 2 - assert
 **description:** Evaluates the total of the transactions and reports about the amount of sessions transactions by each hostname to see the hostname detaining the most transactions among your websites.  

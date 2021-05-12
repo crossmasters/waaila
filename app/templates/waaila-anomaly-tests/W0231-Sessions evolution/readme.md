@@ -14,7 +14,7 @@ Observe the users' interaction on your website. Measure the sessions made by use
 **example:** "{valueColumn: 'sessions'}"  
 ## Blocks:  
 ### 1 - assert
-**description:** Analyze presence of anomalies  
+**description:** Analyze presence of anomalies in sessions  
 **score:** 150  
 **pass message:** No anomalies detected in the ${valueColumnName}  
 **fail message:** There was an anomaly in the ${valueColumnName}  

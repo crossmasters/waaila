@@ -1,0 +1,29 @@
+{
+  "requests": [{
+        "id": "countryHostnames",
+        "queries": [{
+            "dateRanges": [
+                {
+                    "startDate": "28daysAgo",
+                    "endDate": "yesterday"
+                }],
+            "metrics": [
+                {
+                    "expression": "ga:sessions"
+                }],
+            "dimensions": [
+                {
+                    "name": "ga:hostname"
+                },
+                {
+                    "name": "ga:country"
+                }],
+            "orderBys": [
+                {
+                    "fieldName": "ga:sessions",
+                    "sortOrder": "DESCENDING"
+                }],
+            "pageSize": 30
+        }]
+    }]
+}

@@ -1,0 +1,47 @@
+{
+  "columns": [
+    "site_domain",
+    "m_visits",
+    "m_transactions"
+  ],
+  "sort": [
+    "-m_visits"
+  ],
+  "filter": {
+    "property": {
+      "$OR": [
+        {
+          "site_domain": {
+            "$lk": "localhost"
+          }
+        },
+        {
+          "site_domain": {
+            "$lk": "google.translate"
+          }
+        },
+        {
+          "site_domain": {
+            "$lk": "google.we.cache"
+          }
+        }
+      ]
+    }
+  },
+  "space": {
+    "s": [
+      "[code]"
+    ]
+  },
+  "period": {
+    "p1": [
+      {
+        "type": "R",
+        "granularity": "D",
+        "offset": -1
+      }
+    ]
+  },
+  "max-results": 50,
+  "page-num": 1
+}

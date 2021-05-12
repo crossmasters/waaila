@@ -1,0 +1,24 @@
+{
+        "requests": [{
+            "id": "sessionUserRatio",
+            "queries": [{
+                "dateRanges": [
+                    {
+                        "startDate": "28daysAgo",
+                        "endDate": "yesterday"
+                    }
+                ],
+                "metrics": [
+                    {
+                        "expression": "ga:sessions/ga:users",
+                        "alias": "ga:sessionUserRatio",
+                        "formattingType": "FLOAT"
+                    }
+                ],
+                "dimensions":[
+                    {
+                        "name": "ga:deviceCategory"
+                    }
+                ]
+            }]
+        }]}

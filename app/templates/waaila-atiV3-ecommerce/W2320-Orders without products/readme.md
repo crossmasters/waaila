@@ -12,6 +12,6 @@ There might appear some empty orders in GA. To avoid empty orders, it will help 
 **description:** Test checks orders, if some empty order is found, it fails.  
 **score:** 150  
 **pass message:** There are no orders without products.  
-**fail message:** ${assert_fail_message_start} ${Math.round(totalInvalidTransactions/totalTransactions\*10000)/100} % of all transactions  
+**fail message:** Orders without products were found in${assert_fail_message_insert} ${Math.round(totalInvalidTransactions/totalTransactions\*10000)/100} % of all transactions  
 **how to fix message:** Shows table with Ids of orders that has been detected as empty.  
 **description of table displayed in case of failure:** Sample of up to 10 orders without products  

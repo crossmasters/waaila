@@ -1,0 +1,14 @@
+{
+  "requests": [{
+    "id": "searchSessions",
+    "queries": [{
+      "metrics": [{
+        "expression": "ga:searchSessions"
+      }],
+      "dateRanges": [{
+        "startDate": "28daysAgo",
+        "endDate": "yesterday"
+      }]
+    }]
+  }]
+}

@@ -11,7 +11,7 @@
     const nrHostnamesDisplayed = 10;
 
     /**
-    * @warn 1 - It checks presence of data for transactions by hostname
+    * @warn 1 - Loads data and checks for presence of data for transactions by hostname
     * @score 0
     */
     const hostnameTransactions = waaila.functions.normalizeGaResult(results['hostnameTransactions'][0]);
@@ -35,5 +35,5 @@
         .pass.message(assert_pass_message)
         .fail.message(assert_fail_message + '<br/><br/> How to fix: <br/>' +  assert_fail_howtofix 
             + '<br/><br/> ' + assert_fail_tabledescribe)
-        .table(hostnameTransactions.head(nrHostnamesDisplayed)).break;
+        .table(hostnameTransactions.head(nrHostnamesDisplayed));
 }

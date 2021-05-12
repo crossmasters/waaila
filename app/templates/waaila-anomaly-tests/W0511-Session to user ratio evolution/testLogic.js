@@ -11,7 +11,7 @@
     };
     
     /**
-    * @assert 1 - Analyze presence of anomalies
+    * @assert 1 - Analyze presence of anomalies in session to user ratio by device category
     * @score 80
     */
     const inputData = waaila.functions.normalizeGaResult(results['inputData'][0]);

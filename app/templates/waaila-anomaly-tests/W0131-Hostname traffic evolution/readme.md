@@ -18,7 +18,7 @@ Verify that every domain has expected traffic based on pattern from previous wee
 **example:** 100  
 ## Blocks:  
 ### 1 - assert
-**description:** Analyze presence of anomalies  
+**description:** Analyze presence of anomalies in sessions by hostname  
 **score:** 80  
 **pass message:** No anomalies detected in the ${valueColumnName}  
 **fail message:** There was an anomaly in the ${valueColumnName}  

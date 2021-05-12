@@ -1,0 +1,52 @@
+{
+        "requests": [{
+            "id": "monthlyCohorts",
+            "queries": [{
+                "metrics": [
+                        {
+                            "expression": "ga:cohortRevenuePerUser"
+                        }
+                    ],
+                    "dimensions": [
+                        {
+                            "name": "ga:cohort"
+                        },
+                        {
+                            "name": "ga:cohortNthMonth"
+                        }
+                    ],
+                    "orderBys": [
+                        {
+                            "fieldName": "ga:cohort"
+                        }
+                    ],
+                    "cohortGroup": {
+                        "cohorts": [
+                            {
+                                "type": "FIRST_VISIT_DATE",
+                                "name": "2020-12",
+                                "dateRange": {
+                                    "startDate": "2020-12-01",
+                                    "endDate": "2020-12-31"
+                                }
+                            },
+                            {
+                                "type": "FIRST_VISIT_DATE",
+                                "name": "2020-11",
+                                "dateRange": {
+                                    "startDate": "2020-11-01",
+                                    "endDate": "2020-11-30"
+                                }
+                            },
+                            {
+                                "type": "FIRST_VISIT_DATE",
+                                "name": "2020-10",
+                                "dateRange": {
+                                    "startDate": "2020-10-01",
+                                    "endDate": "2020-10-31"
+                                }
+                            }
+                        ]
+                    }
+            }]
+        }]}
