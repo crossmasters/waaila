@@ -1,0 +1,44 @@
+{
+  "requests": [{
+        "id": "transactions",
+        "queries": [{
+            "dateRanges": [
+                {
+                    "startDate": "28daysAgo",
+                    "endDate": "yesterday"
+                }],
+            "metrics": [
+                {
+                    "expression": "ga:transactions"
+                }
+            ],
+            "dimensions": [
+                {
+                    "name": "ga:transactionId"
+                }
+            ],
+            "orderBys": [
+                {
+                    "fieldName": "ga:transactions",
+                    "sortOrder": "DESCENDING"
+                }]
+        }, {
+            "dateRanges": [
+                {
+                    "startDate": "28daysAgo",
+                    "endDate": "yesterday"
+                }],
+            "dimensions": [
+                {
+                    "name": "ga:transactionId"
+                }
+            ],
+            "metrics": [
+                {
+                    "expression": "ga:transactions"
+                }
+            ],
+            "filtersExpression": "ga:transactions>1"
+        }]
+    }]
+}

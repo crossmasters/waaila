@@ -1,0 +1,60 @@
+{
+  "queries": [
+    {
+      "columns": [
+        "m_transactions"
+      ],
+      "sort": [
+        "-m_transactions"
+      ],
+      "space": {
+        "s": [
+          "[code]"
+        ]
+      },
+      "period": {
+        "p1": [
+          {
+            "type": "R",
+            "granularity": "D",
+            "offset": -1
+          }
+        ]
+      },
+      "max-results": 10,
+      "page-num": 1
+    }, 
+    {
+      "columns": [
+        "transaction_id",
+        "m_transactions"
+      ],
+      "sort": [
+        "-m_transactions"
+      ],
+      "filter": {
+        "metric": {
+          "m_transactions": {
+            "$gt": 1
+          }
+        }
+      },
+      "space": {
+        "s": [
+          "[code]"
+        ]
+      },
+      "period": {
+        "p1": [
+          {
+            "type": "R",
+            "granularity": "D",
+            "offset": -1
+          }
+        ]
+      },
+      "max-results": 10000,
+      "page-num": 1
+    }
+  ]
+}

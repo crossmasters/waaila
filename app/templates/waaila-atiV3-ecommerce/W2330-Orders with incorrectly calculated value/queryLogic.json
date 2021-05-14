@@ -1,0 +1,82 @@
+{
+  "queries": [
+    {
+      "columns": [
+        "transaction_id",
+        "m_prod_turnover_withtax",
+        "m_transactions_turnover_withtax",
+        "dif_new"
+      ],
+      "calculatedColumns": {
+        "metrics": [
+          {
+            "key": "dif_new",
+            "op": "dif",
+            "values": [
+              "m_transactions_turnover_withtax",
+              "m_prod_turnover_withtax"
+            ]
+          }
+        ]
+      },
+      "sort": [
+        "-dif_new"
+      ],
+      "space": {
+        "s": [
+          "[code]"
+        ]
+      },
+      "period": {
+        "p1": [
+          {
+            "type": "R",
+            "granularity": "D",
+            "offset": -1
+          }
+        ]
+      },
+      "max-results": 10,
+      "page-num": 1
+    },
+    {
+      "columns": [
+        "transaction_id",
+        "m_prod_turnover_withtax",
+        "m_transactions_turnover_withtax",
+        "dif_new"
+      ],
+      "calculatedColumns": {
+        "metrics": [
+          {
+            "key": "dif_new",
+            "op": "dif",
+            "values": [
+              "m_transactions_turnover_withtax",
+              "m_prod_turnover_withtax"
+            ]
+          }
+        ]
+      },
+      "sort": [
+        "dif_new"
+      ],
+      "space": {
+        "s": [
+          "[code]"
+        ]
+      },
+      "period": {
+        "p1": [
+          {
+            "type": "R",
+            "granularity": "D",
+            "offset": -1
+          }
+        ]
+      },
+      "max-results": 10,
+      "page-num": 1
+    }
+  ]
+}

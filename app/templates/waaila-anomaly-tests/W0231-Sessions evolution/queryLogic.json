@@ -1,0 +1,20 @@
+{
+  "requests": [{
+    "id": "inputData",
+    "queries": [{
+      "dateRanges": [
+      {
+        "startDate": "42daysAgo",
+        "endDate": "yesterday"
+      }],
+      "metrics": [
+      {
+        "expression": "ga:sessions"
+      }],
+      "dimensions": [
+      {
+        "name": "ga:date"
+      }]
+    }]
+  }]
+}

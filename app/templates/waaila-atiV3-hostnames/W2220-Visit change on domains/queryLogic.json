@@ -1,0 +1,53 @@
+{
+  "columns": [
+    "site_domain",
+    "p1.m_visits",
+    "p2.m_visits",
+    "dif_p2_p1_m_visits"
+  ],
+  "calculatedColumns": {
+    "metrics": [
+      {
+        "key": "dif_p2_p1_m_visits",
+        "op": "dif",
+        "values": [
+          "p2.m_visits",
+          "p1.m_visits"
+        ]
+      }
+    ]
+  },
+  "sort": [
+    "-p1.m_visits"
+  ],
+  "filter": {
+    "property": {
+      "event_name": {
+        "$eq": "page.display"
+      }
+    }
+  },
+  "space": {
+    "s": [
+      "[code]"
+    ]
+  },
+  "period": {
+    "p1": [
+      {
+        "type": "R",
+        "granularity": "D",
+        "offset": -1
+      }
+    ],
+    "p2": [
+      {
+        "type": "R",
+        "granularity": "D",
+        "offset": -8
+      }
+    ]
+  },
+  "max-results": 50,
+  "page-num": 1
+}

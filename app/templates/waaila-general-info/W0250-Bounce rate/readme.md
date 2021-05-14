@@ -15,7 +15,7 @@ Bounce rate reflects a single page session. These sessions happen when a custome
 ### upperThreshold
 **type:** number  
 **description:** upper bound to bounce rate in percentages  
-**example:** 90  
+**example:** 95  
 ## Blocks:  
 ### 1 - assert
 **description:** It checks if the bounce rate on any page is not between 10% and 95%, if not, this test fails.  

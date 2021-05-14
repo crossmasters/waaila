@@ -1,0 +1,25 @@
+{
+    "requests": [{
+        "id": "hostnameTransactions",
+        "queries": [{
+            "dateRanges": [
+                {
+                    "startDate": "28daysAgo",
+                    "endDate": "yesterday"
+                }],
+            "metrics": [
+                {
+                    "expression": "ga:transactions"
+                }],
+            "dimensions": [
+                {
+                    "name": "ga:hostname"
+                }],
+            "orderBys": [
+                {
+                    "fieldName": "ga:transactions",
+                    "sortOrder": "DESCENDING"
+                }]
+        }]
+    }]
+}

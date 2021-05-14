@@ -1,0 +1,25 @@
+{
+  "columns": [
+    "date",
+    "m_bounce_rate"
+  ],
+  "sort": [
+    "-m_bounce_rate"
+  ],
+  "space": {
+    "s": [
+      "[code]"
+    ]
+  },
+  "period": {
+    "p1": [
+      {
+        "type": "R",
+        "granularity": "D",
+        "offset": -1
+      }
+    ]
+  },
+  "max-results": 50,
+  "page-num": 1
+}

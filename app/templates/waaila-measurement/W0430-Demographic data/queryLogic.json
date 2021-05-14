@@ -1,0 +1,18 @@
+{
+  "requests": [{
+    "id": "demographics",
+    "queries": [{
+        "dateRanges": [{
+            "startDate": "28daysAgo",
+            "endDate": "yesterday"
+        }],
+        "metrics": [{
+            "expression": "ga:sessions"
+        }],
+        "dimensions": [
+            {
+                "name": "ga:userGender"
+            }]
+    }]
+  }]
+}

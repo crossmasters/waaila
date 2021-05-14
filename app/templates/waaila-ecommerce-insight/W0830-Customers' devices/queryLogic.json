@@ -1,0 +1,43 @@
+{
+        "requests": [{
+            "id": "viewSessionRatio",
+            "queries": [{
+                "dateRanges": [
+                    {
+                        "startDate": "28daysAgo",
+                        "endDate": "yesterday"
+                    }
+                ],
+                "metrics": [
+                    {
+                        "expression": "ga:pageviews/ga:sessions",
+                        "alias": "pageViewsPerSessionRatio",
+                        "formattingType": "FLOAT"
+                    },
+                    {
+                        "expression": "ga:revenuePerUser"
+                    },
+                    {
+                        "expression": "ga:newUsers/ga:users",
+                        "alias": "newUsersRatio",
+                        "formattingType": "FLOAT"
+                    },
+                    {
+                        "expression": "ga:sessions",
+                        "alias": "sessionCount"
+                    }
+                ],
+                "dimensions": [
+                    {
+                        "name": "ga:segment"
+                    }
+                ],
+                "segments": [
+                    {
+                        "segmentId": "gaid::-14"
+                    },{
+                        "segmentId": "gaid::-15"
+                    }
+                ]
+            }]
+        }]}

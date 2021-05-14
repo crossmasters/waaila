@@ -1,0 +1,17 @@
+{
+        "requests": [{
+            "id": "transactionData",
+            "queries": [{
+                "dateRanges": [
+                    {
+                        "startDate": "28daysAgo",
+                        "endDate": "yesterday"
+                    }],
+                "metrics": [
+                    {
+                        "expression": "ga:transactionShipping"
+                    },{
+                        "expression": "ga:transactionTax"
+                    }]
+            }]
+        }]}

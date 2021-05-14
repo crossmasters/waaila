@@ -6,14 +6,15 @@
     const nrPagesDisplayed = 10;
     
     /**
-    * @warn 1 - It checks presence of data for pageviews by page path
+    * @warn 1 - Loads data and checks for presence of data for pageviews by page path
     * @score 0
     */
     const filteredPageViews = waaila.functions.normalizeGaResult(results['pageViews'][0]);
     const filteredPageViewsSummary = waaila.functions.summarizeGaResult(results['pageViews'][0]);
     const totalPageViews = waaila.functions.normalizeGaResult(results['pageViews'][1]);
 
-    waaila.warn(typeof totalPageViews[0] != 'undefined', 0).fail.message('No data returned for pageviews by pagePath').break;
+    const warn_message_fail = 'No data returned for pageviews by pagePath';
+    waaila.warn(typeof totalPageViews[0] != 'undefined', 0).fail.message(warn_message_fail).break;
 
     /**
     * @assert 2 - It checks if Pages dimension contains the “utm_”, but none of the following follows: source|medium|campaign|term|content.
@@ -34,6 +35,6 @@
     waaila.assert(pageViews == 0, 80)
         .pass.message(assert_pass_message)
         .fail.message(assert_fail_message + '<br/><br/> How to fix: <br/>' +  assert_fail_howtofix 
-            + '<br/><br/>')
-        .table(filteredPageViews.head(nrPagesDisplayed)).break;
+            + '<br/><br/>' + assert_fail_tabledescribe)
+        .table(filteredPageViews.head(nrPagesDisplayed));
 }

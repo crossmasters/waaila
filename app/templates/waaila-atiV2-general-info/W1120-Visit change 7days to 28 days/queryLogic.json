@@ -1,0 +1,1 @@
+columns={p1.m_visits,p2.m_visits}&sort={-p1.m_visits}&space={s:[code]}&period={p1:{R:{D:{start:'-7',end:'-1'}}},p2:{R:{D:{start:'-28',end:'-1'}}}}&max-results=50&page-num=1

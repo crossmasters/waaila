@@ -1,0 +1,26 @@
+{
+  "columns": [
+    "m_transactions_shipping_taxfree",
+     "m_prod_turnover_taxfree",
+    "m_prod_turnover_withtax"
+  ],
+  "sort": [
+    "m_transactions_shipping_taxfree"
+  ],
+  "space": {
+    "s": [
+      "[code]"
+    ]
+  },
+  "period": {
+    "p1": [
+      {
+        "type": "R",
+        "granularity": "W",
+        "offset": -1
+      }
+    ]
+  },
+  "max-results": 10,
+  "page-num": 1
+}

@@ -14,7 +14,7 @@ UTM parameters are important for marketing campaign identification. If there are
 **example:** 10  
 ## Blocks:  
 ### 1 - warn
-**description:** It checks presence of data for pageviews by page path  
+**description:** Loads data and checks for presence of data for pageviews by page path  
 **score:** 0  
 ### 2 - assert
 **description:** It checks if Pages dimension contains the “utm_”, but none of the following follows: source|medium|campaign|term|content.  

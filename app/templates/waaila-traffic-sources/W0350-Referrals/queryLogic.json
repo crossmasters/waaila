@@ -1,0 +1,64 @@
+{
+  "requests": [
+    {
+      "id": "current",
+      "queries": [
+        {
+          "dateRanges": [
+            {
+              "startDate": "yesterday",
+              "endDate": "yesterday"
+            }
+          ],
+          "metrics": [
+            {
+              "expression": "ga:sessions"
+            }
+          ],
+          "dimensions": [
+            {
+              "name": "ga:source"
+            }
+          ], 
+          "filtersExpression": "ga:medium==referral", 
+          "orderBys": [ 
+            { 
+              "fieldName": "ga:sessions", 
+              "sortOrder": "DESCENDING"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "previous",
+      "queries": [
+        {
+          "dateRanges": [
+            {
+              "startDate": "2daysAgo",
+              "endDate": "2daysAgo"
+            }
+          ],
+          "metrics": [
+            {
+              "expression": "ga:sessions"
+            }
+          ],
+          "dimensions": [
+            {
+              "name": "ga:source"
+            }
+          ], 
+          "filtersExpression": "ga:medium==referral", 
+          "orderBys": [ 
+            { 
+              "fieldName": "ga:sessions", 
+              "sortOrder": "DESCENDING"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
