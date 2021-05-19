@@ -17,4 +17,4 @@ If duplicate transactions are in your data, the same data will be evaluated more
 **pass message:** Every transaction ID corresponds to a single transaction.  
 **fail message:** Duplicate transactions detected in${assert_fail_message_insert} ${Math.round(totalInvalidTransactions/totalTransactions\*10000)/100} % of all transactions  
 **how to fix message:** If the percentage of duplicate transactions is high, check if information is sent only on purchase page.  
-**description of table displayed in case of failure:** Sample of up to 10 invalid transactions  
+**table displayed in case of failure:** Sample of up to 10 invalid transactions  

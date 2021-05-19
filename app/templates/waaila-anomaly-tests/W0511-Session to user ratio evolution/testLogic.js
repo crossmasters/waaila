@@ -1,6 +1,6 @@
 (results, waaila) => {
     /**
-    * @const {array} anomalyDetectionConfig - Settings of the anomaly detection analysis
+    * @const {object} anomalyDetectionConfig - Settings of the anomaly detection analysis
     * @default {valueColumn: 'sessions', dimensions: ['deviceCategory']}
     */
     const anomalyDetectionConfig = {

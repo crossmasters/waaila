@@ -19,4 +19,4 @@ It may happen that there are orders from which total revenue does not match the 
 **pass message:** For all orders the sum of products in order equals to the value of whole order.  
 **fail message:** There are orders, by which the sum of products in order does not equal to the value of whole order.  
 **how to fix message:** You need to check the measurement of order value.  
-**description of table displayed in case of failure:** Sample of up to 20 invalid orders (up to 10 highest and up to 10 lowest differences)  
+**table displayed in case of failure:** Sample of up to 20 invalid orders (up to 10 highest and up to 10 lowest differences)  

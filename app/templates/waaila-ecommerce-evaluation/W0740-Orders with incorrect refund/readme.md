@@ -22,4 +22,4 @@ When a refund must be performed on your website, the user wishes to receive the 
 **pass message:** No transactions with incorrect refund amount were found (refund amount is equal to value of product revenue/total revenue).  
 **fail message:** Transactions with incorrect refund amount were found.  
 **how to fix message:** Check the correctness of the refund measurement.  
-**description of table displayed in case of failure:** Sample of up to 10 invalid transactions  
+**table displayed in case of failure:** Sample of up to 10 invalid transactions  

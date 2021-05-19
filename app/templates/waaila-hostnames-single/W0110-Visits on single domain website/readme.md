@@ -27,4 +27,4 @@ In a single domain website, most of the traffic shall be aligned to only one hos
 **pass message:** Ratio of traffic on the most frequent hostname (${hostName}) to all traffic is higher than ${sessionThreshold\*100} %  
 **fail message:** Ratio of traffic on the most frequent hostname  (${hostName}) to all traffic is not higher than ${sessionThreshold\*100} %  
 **how to fix message:** Check if there is some filter for inclusion of hostnames applied, if not, create one. It should be an include filter with defined main hostname.  
-**description of table displayed in case of failure:** Sample of largest hostnames (${Math.min(nrHostnamesDisplayed, hostnamesLength)} / ${hostnamesLength})  
+**table displayed in case of failure:** Sample of largest hostnames (${Math.min(nrHostnamesDisplayed, hostnamesLength)} / ${hostnamesLength})  

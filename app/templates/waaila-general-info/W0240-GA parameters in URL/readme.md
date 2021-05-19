@@ -19,4 +19,4 @@ To reduce the length of the URL and to avoid duplicate data, Pageviews dimension
 **pass message:** No pages were found that contain utm, fclid or gclid  
 **fail message:** Pages were found that contain utm, fclid or gclid  
 **how to fix message:** It needs to be checked if syntax of URL is correct, there should be question marks used to separate query parameters or hash. Exclude parameters in view settings, type them in field „Strip out URL query parameters“ separated by comma.  
-**description of table displayed in case of failure:** Example of pages with utm, fclid or gclid (${actualPageLength}/${lengthAddInfo}${filteredPageLength})  
+**table displayed in case of failure:** Example of pages with utm, fclid or gclid (${actualPageLength}/${lengthAddInfo}${filteredPageLength})  

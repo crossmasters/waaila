@@ -9,7 +9,7 @@
 Verify that every domain has expected traffic based on pattern from previous weeks. If for any of the domains there is a large change in traffic, it could mean a measurement problem or problem with the website. A step-by-step guide for anomaly detection in Waaila can be found in the <a href=https://waaila.com/en/docs/waaila/writing/anomaly-detection/#isdayofweekanomaly>documentation</a>.  
 ## Constants:  
 ### anomalyDetectionConfig
-**type:** array  
+**type:** object  
 **description:** Settings of the anomaly detection analysis  
 **example:** "{valueColumn: 'sessions', dimensions: ['hostname']}"  
 ### minExpectedSessions

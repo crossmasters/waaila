@@ -1,0 +1,23 @@
+{
+	"entity": {
+		"propertyId": "[propertyId]"
+	},
+	"dateRanges": [
+		{
+			"startDate": "90daysAgo",
+			"endDate": "yesterday"
+		},
+        {
+			"startDate": "360daysAgo",
+			"endDate": "yesterday"
+		}
+	],
+	"metrics": [
+		{
+			"name": "eventCount"
+		}
+	],
+	"metricAggregations": [
+		"TOTAL"
+	]
+}

@@ -30,6 +30,7 @@
     
     const assert_pass_message = 'For every product list the amount of impressions is higher than the amount of clicks.';
     const assert_fail_message = 'More clicks than impressions occurred';
+    const assert_fail_howtofix = 'Check if measurement of product list items from the table is set up correctly.';
     const assert_fail_tabledescribe = 'Sample of up to 10 product lists with more clicks than impressions';
     waaila.assert(typeof invalidClicks[0] === 'undefined', 50)
         .pass.message(assert_pass_message)

@@ -37,8 +37,8 @@
         row['Percent. change from (p2) to (p1)'] = Math.round(+row['Difference (m_visits (p2) - m_visits (p1))']/+row['Visits (p2)']*10000)/100;
         delete row['Difference (m_visits (p2) - m_visits (p1))'];
     })
-    const assert_pass_message = 'Visits have not diverged more than ${maxRatioChange*100} % from visits week before on any included domains.';
-    const assert_fail_message = 'Visits on some domains (${varyingDomainsJoined}) have diverged more than ${maxRatioChange*100} % from visits week before.';
+    const assert_pass_message = `Visits have not diverged more than ${maxRatioChange*100} % from visits week before on any included domains.`;
+    const assert_fail_message = `Visits on some domains (${varyingDomainsJoined}) have diverged more than ${maxRatioChange*100} % from visits week before.`;
     waaila.assert((typeof varyingDomains[0] === 'undefined'), 100)
         .pass.message(assert_pass_message)
         .fail.message(assert_fail_message).table(visitsFiltered); 

@@ -1,6 +1,6 @@
 async (results, waaila, done) => {
     /**
-    * @const {array} anomalyDetectionConfig - Settings of the anomaly detection analysis
+    * @const {object} anomalyDetectionConfig - Settings of the anomaly detection analysis
     * @default {resourceName: '******', resourceKey: '******', timeColumn: 'date', valueColumn: 'sessions'}
     */
     const anomalyDetectionConfig = {

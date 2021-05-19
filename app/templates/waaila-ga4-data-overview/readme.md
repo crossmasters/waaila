@@ -5,4 +5,4 @@
 ## Description:  
 Selected tests for data from the new version of Google Analytics.  
 ## Further information:  
-These tests provide a first peak into data from Google Analytics 4
+These tests provide a first peak into data from Google Analytics 4.

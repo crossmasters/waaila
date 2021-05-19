@@ -23,4 +23,5 @@ It is important to measure the number of clicks and views generated in response 
 **score:** 50  
 **pass message:** For every product list the amount of impressions is higher than the amount of clicks.  
 **fail message:** More clicks than impressions occurred  
-**description of table displayed in case of failure:** Sample of up to 10 product lists with more clicks than impressions  
+**how to fix message:** Check if measurement of product list items from the table is set up correctly.  
+**table displayed in case of failure:** Sample of up to 10 product lists with more clicks than impressions  

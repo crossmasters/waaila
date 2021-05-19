@@ -6,7 +6,8 @@
 **maximal test score:** 70  
 **test language:** en  
 ## Description:  
-Free version of google analytics has a limit on number of hits it can collect. Ingesting more than 10 million hits a month per property has impact on how your data are processed and stored.  Also, measurement will be slow and larger sampling errors will appear than before. In worst case it might even happen that Google is going to delete your property. This however happens rarely and only if you ingest a lot more hits than this limit (you can set the limits in the test, see section [Constants](#constants)). More likely you will receive emails from Google Sales to think about a paid solution of Google Analytics 360.   
+Free version of google analytics has a limit on number of hits it can collect. Ingesting more than 10 million hits a month per property has impact on how your data are processed and stored.  Also, measurement will be slow and larger sampling errors will appear than before. In worst case it might even happen that Google is going to delete your property. This however happens rarely and only if you ingest a lot more hits than this limit. More likely you will receive emails from Google Sales to think about a paid solution of Google Analytics 360. 
+  
 ## Further information:  
 This test is mainly helpful for users that do not have GA 360 already.
 ## Constants:  

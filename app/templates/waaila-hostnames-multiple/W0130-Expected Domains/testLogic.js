@@ -1,5 +1,5 @@
 (results, waaila) => {
-    // Run the test once and based on the results configure the following arrays (more information on https://github.com/crossmasters/waaila/tree/master/app/templates/waaila-hostnames-multiple/W0130-Expected%20Domains#further-information)
+    // Run the test once and based on the results configure the following arrays (more information on [link-to-template]#further-information)
     /**
     * @const {array} necessaryDomainsArray - list of domains that are required to be present in the data
     * @default ['main-domain.com', 'other-domain.com']

@@ -1,6 +1,6 @@
 (results, waaila) => {
     /**
-    * @const {number} transactionThreshold - share of sessions on the main domain should be above this threshold 
+    * @const {number} transactionThreshold - share of transactions on the main domain should be above this threshold 
     * @default 0.98
     */
     const transactionThreshold = 0.98;
@@ -27,8 +27,8 @@
     const hostName = hostnameTransactions[0]['ga:hostname'];
 
     const hostnamesLength = hostnameTransactions.length;
-    const assert_pass_message = `Ratio of transactions on the most frequent hostname  (${hostName}) to all transactions is higher than ${sessionThreshold*100} %`;
-    const assert_fail_message = `Ratio of transactions on the most frequent hostname  (${hostName}) to all transactions is not higher than ${sessionThreshold*100} %`;
+    const assert_pass_message = `Ratio of transactions on the most frequent hostname  (${hostName}) to all transactions is higher than ${transactionThreshold*100} %`;
+    const assert_fail_message = `Ratio of transactions on the most frequent hostname  (${hostName}) to all transactions is not higher than ${transactionThreshold*100} %`;
     const assert_fail_howtofix = 'Check if there is some filter for inclusion of hostnames applied, if not, create one. It should be include filter with defined main hostname.';
     const assert_fail_tabledescribe = `Sample of largest hostnames (${Math.min(nrHostnamesDisplayed, hostnamesLength)} / ${hostnamesLength}):`;
     waaila.assert(maxTransactions / totalTransactions > transactionThreshold, 80)

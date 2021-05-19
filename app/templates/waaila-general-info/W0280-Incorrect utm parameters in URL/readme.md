@@ -22,4 +22,4 @@ UTM parameters are important for marketing campaign identification. If there are
 **pass message:** No pages were found that contain utm_ but not in combination with source, medium, campaign, term or content.  
 **fail message:** Pages were found that contain only utm_ (it does not contain source|medium|campaign|term|content).  
 **how to fix message:** It needs to be checked if syntax of URL is correct, there should be question marks used to separate query parameters or hash. Exclude parameters in view settings, type them in field „Strip out URL query parameters“ separated by comma.  
-**description of table displayed in case of failure:** Sample pagePaths with incorrect utm parameters (${actualPageLength}/${lengthAddInfo}${filteredPageLength})  
+**table displayed in case of failure:** Sample pagePaths with incorrect utm parameters (${actualPageLength}/${lengthAddInfo}${filteredPageLength})  

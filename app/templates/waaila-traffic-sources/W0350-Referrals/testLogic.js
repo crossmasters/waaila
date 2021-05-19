@@ -52,7 +52,7 @@
     })
 
     const assert_pass_message_increase = 'No referrals increased significantly yesterday compared to previous period.';
-    const assert_fail_message_increase = `2) Some referrals increased by more than ${maximalAllowedPercIncrease} percent yesterday compared to previous period.`;
+    const assert_fail_message_increase = `Some referrals increased by more than ${maximalAllowedPercIncrease} percent yesterday compared to previous period.`;
     waaila.assert(typeof increasingReferrals[0] === 'undefined', 50)
         .pass.message(assert_pass_message_increase)
         .fail.message(assert_fail_message_increase).table(increasingReferrals); 

@@ -26,4 +26,4 @@ In a single domain website, most of the sessions shall be aligned to only one ho
 **pass message:** Ratio of transactions on the most visited hostname  (${hostName}) to all transactions is higher than ${transactionThreshold\*100} %  
 **fail message:** Ratio of transactions on the most visited hostname  (${hostName}) to all transactions is not higher than ${transactionThreshold\*100} %  
 **how to fix message:** Check if there is some filter for inclusion of hostnames applied, if not, create one. It should be include filter with defined main hostname.  
-**description of table displayed in case of failure:** Sample of largest hostnames (${Math.min(nrHostnamesDisplayed, hostnamesLength)} / ${hostnamesLength} )  
+**table displayed in case of failure:** Sample of largest hostnames (${Math.min(nrHostnamesDisplayed, hostnamesLength)} / ${hostnamesLength} )  

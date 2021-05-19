@@ -9,7 +9,7 @@
 The anomaly detection allows you to follow the dynamics of your analytics data and informs you when the values jump significantly as compared to their trends and cyclical patterns. In particular, jumps in sessions could indicate measurement issues or some artificial boost or limitation to access to your website. This test is based on the Azure Anomaly Detector resource, therefore, it requires to enter the resource name and key. A step-by-step guide can be found in the <a href=https://waaila.com/en/docs/waaila/writing/anomaly-detection/#isanomaly>documentation</a>.  
 ## Constants:  
 ### anomalyDetectionConfig
-**type:** array  
+**type:** object  
 **description:** Settings of the anomaly detection analysis  
 **example:** "{resourceName: '******', resourceKey: '******', timeColumn: 'date', valueColumn: 'sessions'}"  
 ## Blocks:  

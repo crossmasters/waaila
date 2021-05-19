@@ -30,4 +30,4 @@ Measured data on referrals provide a way to monitor traffic pointed to your webs
 **description:** There is no unexpected increase in any of the existing sources  
 **score:** 50  
 **pass message:** No referrals increased significantly yesterday compared to previous period.  
-**fail message:** 2) Some referrals increased by more than ${maximalAllowedPercIncrease} percent yesterday compared to previous period.  
+**fail message:** Some referrals increased by more than ${maximalAllowedPercIncrease} percent yesterday compared to previous period.  

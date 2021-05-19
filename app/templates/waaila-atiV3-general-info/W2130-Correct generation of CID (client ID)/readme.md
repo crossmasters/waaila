@@ -23,4 +23,4 @@ There must be significantly more visits than visitors. If it doesn't hold, it me
 **pass message:** The total amount of visits is higher than the total number of visitors - average visits per visitor is ${Math.round(totalRatio\*10000)/10000}  
 **fail message:** There is an unusually low number of visitors compared to visits for some devices: ${selectedDeviceArrayJoined} (the share of visitors to visits is below the threshold of ${visitRatioThreshold})  
 **how to fix message:** Check that pageview measurement is triggered correctly.  
-**description of table displayed in case of failure:** Shows the table with ratios by Device type.  
+**table displayed in case of failure:** Shows the table with ratios by Device type.  

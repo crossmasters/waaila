@@ -5,4 +5,4 @@
 ## Description:  
 Evaluation of missing, unexpected or invalid hostnames. These tests require configuration.  
 ## Further information:  
-In evaluation of data from multiple hostnames you may need to use the knowledge of acceptible hostnames that may appear in the data.
+In evaluation of data from multiple hostnames you may need to use the knowledge of acceptable hostnames that may appear in the data.
