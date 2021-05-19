@@ -6,7 +6,7 @@
 				"impressions": { "$ref": "defs.json#/definitions/impressions" },
 				"productClick": { "$ref": "defs.json#/definitions/productClick" },
 				"promoView": { "$ref": "defs.json#/definitions/promoView" },
-				"promoClick": { "$ref": "defs.json#/definitions/promoClick" }
+				"promotionClick": { "$ref": "defs.json#/definitions/promoClick" }
 			}
 		},{
 			"name": "Product Page",
@@ -14,7 +14,7 @@
 				"impressions": { "$ref": "defs.json#/definitions/impressions" },
 				"productClick": { "$ref": "defs.json#/definitions/productClick" },
 				"promoView": { "$ref": "defs.json#/definitions/promoView" },
-				"promoClick": { "$ref": "defs.json#/definitions/promoClick" },
+				"promotionClick": { "$ref": "defs.json#/definitions/promoClick" },
 				"detail": {
 					"type": "object",
 					"properties": {
@@ -129,7 +129,7 @@
 			"contexts": {
 				"productClick": { "$ref": "defs.json#/definitions/productClick" },
 				"promoView": { "$ref": "defs.json#/definitions/promoView" },
-				"promoClick": { "$ref": "defs.json#/definitions/promoClick" },
+				"promotionClick": { "$ref": "defs.json#/definitions/promoClick" },
 				"checkout": {
 					"type": "object",
 					"properties": {
@@ -376,7 +376,7 @@
 			},
 			"event": {
 				"type": "string",
-				"pattern": "^(gtm\\..*|productClick|addToCart|removeFromCart|promoView|promoClick|checkout|checkoutOption)$"
+				"pattern": "^(gtm\\..*|productClick|addToCart|removeFromCart|promoView|promotionClick|checkout|checkoutOption)$"
 			},
             "promo": {
 				"type": "object",
