@@ -37,7 +37,6 @@
         return permittedDomainsArray.includes(row['hostname']) == false;
 
     });
-    
     const assert_pass_message_unexpected = 'No unexpected domains are measured in the data.';
     const assert_fail_message_unexpected = 'There are some sessions on unexpected domains:';
     waaila.assert((typeof hostnameSessionsFiltered[0] === 'undefined'), 60)
