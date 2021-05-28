@@ -23,14 +23,14 @@ async (results, waaila, done) => {
     const assert_pass_message = `No anomalies detected in the ${valueColumnName}`;
     const assert_fail_message = `There was an anomaly in the ${valueColumnName}`;
     
-    if (typeof processedData[0] === 'undefined') {
-        waaila.table(processedData);
+    if (typeof processedData['data'] === 'undefined') {
+        processedData['messages'].forEach(message => waaila.table(message));
     } else {
-        const anomalies = processedData.filter(row => row['isAnomaly'] == true);
+        const anomalies = processedData['data'].filter(row => row['isAnomaly'] == true);
         waaila.assert(typeof anomalies[0] === 'undefined', 100)
             .pass.message(assert_pass_message).fail.message(assert_fail_message);
 
-        const processedDataLastDay = processedData.filter(row => row['isAnomaly'] != null).order(['expectedValue'], true);
+        const processedDataLastDay = processedData['data'].filter(row => row['isAnomaly'] != null).order(['expectedValue'], true);
         waaila.table(processedDataLastDay, [{ 'column': 'isAnomaly', 'condition': { 'EQUAL': false } }]);
     }
     done();

@@ -1,7 +1,4 @@
 {
-	"entity": {
-		"propertyId": "[propertyId]"
-	},
 	"dateRanges": [
 		{
 			"startDate": "28daysAgo",
