@@ -15,7 +15,10 @@
               "expression": "ga:sessions/ga:users",
               "alias": "ga:sessionUserRatio",
               "formattingType": "FLOAT"
-            }
+            },
+			{
+				"expression": "ga:sessions"
+			}
           ],
           "dimensions": [
             {
@@ -24,7 +27,17 @@
             {
               "name": "ga:date"
             }
-          ]
+          ],
+          "orderBys": [
+            {
+              "fieldName": "ga:date"
+            },
+            {
+              "fieldName": "ga:sessions",
+              "sortOrder": "DESCENDING"
+            }
+          ], 
+          "pageSize": 10000
         }
       ]
     }

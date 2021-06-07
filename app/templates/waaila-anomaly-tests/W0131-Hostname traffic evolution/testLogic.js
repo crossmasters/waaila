@@ -6,7 +6,8 @@
     const anomalyDetectionConfig = {
         valueColumn: 'sessions', // the name of metric to be analysed (without ga: prefix)
         sensitivity: 80, // how sensitive to shocks (values 0-99, default 80)
-        overDimensions: ['hostname'] // the analysis is run for all combinations of listed dimensions separately (default [], i.e. run just once)
+        overDimensions: ['hostname'], // the analysis is run for all combinations of listed dimensions separately (default [], i.e. run just once)
+        overCombinationsLimit: 10 // for how many values the anomalies will be calculated (default 7, here for first 10 hostnames sorted by sessions)
     };
     /**
     * @const {number} minExpectedSessions - minimal expected amount of sessions to be included in the results

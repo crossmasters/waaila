@@ -6,7 +6,8 @@
     const anomalyDetectionConfig = {
         valueColumn: 'sessionUserRatio', // the name of metric to be analysed (without ga: prefix)
         sensitivity: 80, // how sensitive to shocks (values 0-99, default 80)
-        overDimensions: ['deviceCategory'] // the analysis is run for all combinations of listed dimensions separately (default [], i.e. run just once)
+        overDimensions: ['deviceCategory'], // the analysis is run for all combinations of listed dimensions separately (default [], i.e. run just once)
+		overCombinationsLimit: 3 // for how many values the anomalies will be calculated (default 7, here for first 3 devices sorted by sessions)
     };
     
     /**
