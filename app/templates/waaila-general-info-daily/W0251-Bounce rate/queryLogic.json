@@ -6,23 +6,23 @@
         {
           "dateRanges": [
             {
-              "startDate": "63daysAgo",
+              "startDate": "28daysAgo",
               "endDate": "yesterday"
             }
           ],
           "metrics": [
             {
-              "expression": "ga:sessions/ga:users",
-              "alias": "ga:sessionUserRatio",
-              "formattingType": "FLOAT"
+              "expression": "ga:bounceRate"
             }
           ],
           "dimensions": [
             {
-              "name": "ga:deviceCategory"
-            },
-            {
               "name": "ga:date"
+            }
+          ],
+          "orderBys": [
+            {
+              "fieldName": "ga:date"
             }
           ]
         }

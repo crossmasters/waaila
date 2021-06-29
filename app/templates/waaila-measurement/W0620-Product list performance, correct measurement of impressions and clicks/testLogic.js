@@ -8,16 +8,16 @@
     
     const totalClicks = totalViewClicksSummary['productListClicks']['total'];
     const warn_fail_message_click = 'No click data found.';
-    const assert_fail_howtofix_click = 'Check if measurement of product list items from the table is set up correctly.';
-    waaila.warn(totalClicks > 0, 0).fail.message(warn_fail_message_click + '<br/><br/> How to fix: <br/>' +  assert_fail_howtofix_click);
+    const warn_fail_howtofix_click = 'Check if measurement of product list items from the table is set up correctly.';
+    waaila.warn(totalClicks > 0, 0).fail.message(warn_fail_message_click + '<br/><br/> How to fix: <br/>' +  warn_fail_howtofix_click);
     /**
     * @warn 2 - Test checks if there are some views on product list items measured. If there are no views measured, it shows message.
     * @score 0
     */
     const totalViews = totalViewClicksSummary['productListViews']['total'];
     const warn_fail_message_view = 'No view data found.';
-    const assert_fail_howtofix_view = 'Check if measurement of product list items from the table is set up correctly.';
-    waaila.warn(totalViews > 0, 0).fail.message(warn_fail_message_view + '<br/><br/> How to fix: <br/>' +  assert_fail_howtofix_view).break;
+    const warn_fail_howtofix_view = 'Check if measurement of product list items from the table is set up correctly.';
+    waaila.warn(totalViews > 0, 0).fail.message(warn_fail_message_view + '<br/><br/> How to fix: <br/>' +  warn_fail_howtofix_view).break;
     
     /**
     * @assert 3 - Test checks both impressions and clicks, if there are more clicks than impressions by some product list item, it fails and shows message and table.

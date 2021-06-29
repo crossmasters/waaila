@@ -1,0 +1,36 @@
+{
+  "requests": [{
+        "id": "pageViews",
+        "queries": [{
+            "dateRanges": [
+                {
+                    "startDate": "7daysAgo",
+                    "endDate": "yesterday"
+                }
+            ],
+            "dimensions": [
+                { 
+                    "name": "ga:pagePath" 
+                }
+            ],
+            "metrics": [
+                {
+                    "expression": "ga:pageviews"
+                }],
+            "dimensionFilterClauses": [{
+                "operator": "AND",
+                "filters": [{
+                    "not": false,
+                    "dimensionName": "ga:pagePath",
+                    "operator": "REGEXP",
+                    "expressions": ["[&\\?].*(gclid|fclid|utm_(source|medium|campaign|term|content))"]
+                }]
+            }],
+            "orderBys":[{ 
+                "fieldName": "ga:pageviews",
+                "sortOrder": "DESCENDING"
+                }
+            ]
+        }]
+    }]
+}
