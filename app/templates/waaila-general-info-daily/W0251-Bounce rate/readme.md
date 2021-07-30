@@ -2,7 +2,7 @@
 ## Main info:  
 **created at:** 2020-06-01T00:00:00  
 **test type:** assertion  
-**test version:** 6  
+**test version:** 7  
 **maximal test score:** 70  
 **test language:** en  
 ## Description:  

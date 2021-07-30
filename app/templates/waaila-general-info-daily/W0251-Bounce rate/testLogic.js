@@ -15,7 +15,7 @@
     */
     const inputData = waaila.functions.normalizeGaResult(results['inputData'][0]);
     const processedData = waaila.functions.isDayOfWeekAnomaly(anomalyDetectionConfig, inputData);
-    
+	
     const valueColumnName = anomalyDetectionConfig['valueColumn'];
     const assert_pass_message = `No anomalies detected in the ${valueColumnName}`;
     const assert_fail_message = `There was an anomaly in the ${valueColumnName}`;
@@ -26,7 +26,7 @@
         const anomalies = processedData['data'].filter(row => row['isAnomaly'] == 1);
         waaila.assert(typeof anomalies[0] === 'undefined', 70)
             .pass.message(assert_pass_message).fail.message(assert_fail_message);
-    
+
         const processedDataLastDay = processedData['data'].filter(row => row['isAnomaly'] != null)
             .order(['expectedValue'], true);
         waaila.table(processedDataLastDay, [{ 'column': 'isAnomaly', 'condition': { 'EQUAL': false } }]);

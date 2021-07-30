@@ -2,6 +2,7 @@
 ## Main info:  
 **data provider code:** ati-v2  
 **version:** 1  
+**link to template in Waaila:** https://app.waaila.com/#/template-gallery/waaila-atiV2-general-info  
 ## Description:  
 Tests for general overview of website use and measurement, using older API for AT Internet data.  
 ## Further information:  

@@ -2,6 +2,7 @@
 ## Main info:  
 **data provider code:** ga-reporting-v4  
 **version:** 1  
+**link to template in Waaila:** https://app.waaila.com/#/template-gallery/waaila-anomaly-tests  
 ## Description:  
 Tests enhanced by anomaly detection based on weekly patterns. No further resources required.  
 ## Further information:  

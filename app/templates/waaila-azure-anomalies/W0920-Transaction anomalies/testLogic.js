@@ -23,7 +23,7 @@ async (results, waaila, done) => {
     const assert_pass_message = `No anomalies detected in the ${valueColumnName}`;
     const assert_fail_message = `There was an anomaly in the ${valueColumnName}`;
     
-    if (typeof processedData['data'] === 'undefined') {
+    if (processedData['data'].length === 0) {
         processedData['messages'].forEach(message => waaila.table(message));
     } else {
         const anomalies = processedData['data'].filter(row => row['isAnomaly'] == true);

@@ -2,6 +2,7 @@
 ## Main info:  
 **data provider code:** ga-reporting-v4  
 **version:** 1  
+**link to template in Waaila:** https://app.waaila.com/#/template-gallery/waaila-ecommerce-evaluation  
 ## Description:  
 Collection of tests specialized on e-commerce environment.  
 ## Further information:  
