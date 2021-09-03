@@ -1,9 +1,9 @@
 (results, waaila) => {
     /**
-    * @const {array} expectedProfileTypes - Set of main view types that are expected to be present
-    * @default ['master', 'raw', 'bckp']
+    * @const {array} expectedProfileTypes - Set of main view types that are expected to be present, this can be extended based on client needs, eg. backup, bckp, test,...
+    * @default ['master', 'raw']
     */
-    const expectedProfileTypes = ['master', 'raw', 'bckp'];
+    const expectedProfileTypes = ['master', 'raw'];
 
     /**
     * @warn 1 - Prepares data and checks presence of expected profile types
