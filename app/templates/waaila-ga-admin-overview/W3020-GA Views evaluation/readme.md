@@ -2,7 +2,7 @@
 ## Main info:  
 **created at:** 2021-03-01T00:00:00  
 **test type:** warning  
-**test version:** 2  
+**test version:** 3  
 **maximal test score:** 60  
 **test language:** en  
 ## Description:  
@@ -10,8 +10,8 @@ Google Analytics properties contain views of the data. The views' information ne
 ## Constants:  
 ### expectedProfileTypes
 **type:** array  
-**description:** Set of main view types that are expected to be present  
-**example:** ["master", "raw", "bckp"]  
+**description:** Set of main view types that are expected to be present, this can be extended based on client needs, eg. backup, bckp, test,...  
+**example:** ["master", "raw"]  
 ## Blocks:  
 ### 1 - warn
 **description:** Prepares data and checks presence of expected profile types  

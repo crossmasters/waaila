@@ -2,7 +2,7 @@
 ## Main info:  
 **created at:** 2020-06-01T00:00:00  
 **test type:** check  
-**test version:** 3  
+**test version:** 4  
 **maximal test score:** 150  
 **test language:** en  
 ## Description:  

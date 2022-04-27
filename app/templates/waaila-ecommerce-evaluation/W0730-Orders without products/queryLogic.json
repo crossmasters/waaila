@@ -15,7 +15,8 @@
                 {
                     "name": "ga:transactionId"
                 }],
-            "filtersExpression": "ga:itemQuantity==0"
+            "filtersExpression": "ga:itemQuantity==0", 
+            "includeEmptyRows": true
         }, {
             "dateRanges": [
                 {

@@ -1,0 +1,34 @@
+{
+      "dateRanges": [
+        {
+          "startDate": "42daysAgo",
+          "endDate": "yesterday"
+        }
+      ],
+      "metrics": [
+        {
+          "name": "bounceRate"
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "date"
+        },
+        {
+          "name": "hostname"
+        }
+      ],
+      "orderBys": [
+        {
+          "dimension": {
+            "dimensionName": "date"
+          },
+          "desc": false
+        }
+      ],
+      "metricAggregations": [
+        "TOTAL",
+        "MINIMUM",
+        "MAXIMUM"
+      ]
+    }
