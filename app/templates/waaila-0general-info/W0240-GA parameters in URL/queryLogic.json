@@ -23,7 +23,7 @@
                     "not": false,
                     "dimensionName": "ga:pagePath",
                     "operator": "REGEXP",
-                    "expressions": ["[&\\?].*(gclid|fclid|utm_(source|medium|campaign|term|content))"]
+                    "expressions": ["[&\\?].*(gclid|fclid|sznclid|msclkid|utm_(source|medium|campaign|term|content))"]
                 }]
             }],
             "orderBys":[{ 

@@ -1,14 +1,24 @@
 (results, waaila) => {
     /**
+    * @const {string} expectedAnalysisAmount - Expected amount of analysis (queries) you run on your data in BigQuery, options: 'low' (around the monthly amount of data), 'average' (around 10 times the monthly amount of data), 'high' (around 50 times the monthly amount of data)
+    * @default average
+    */
+    const expectedAnalysisAmount = 'average';
+    /**
+    * @const {string} dataImportMethod - Used method of GA data import, options: 'streaming', 'batchLoad' (for more information https://cloud.google.com/bigquery/docs/loading-data)
+    * @default streaming
+    */
+    const dataImportMethod = 'streaming';
+    /**
     * @const {object} priceConfig - Settings of the prices for Big Query price calculation
-    * @default {queries: {unitPrice: 5,freeUnits: 1}, activeStorage: {unitPrice: 0.02,freeUnits: 10}, longTermStorage: {unitPrice: 0.01,freeUnits: 10}, streaming: {unitPrice: 0.01/200,freeUnits: 0}}
+    * @default {analysis: {unitPrice: 5,freeUnits: 1}, activeStorage: {unitPrice: 0.02,freeUnits: 10}, longTermStorage: {unitPrice: 0.01,freeUnits: 10}, streaming: {unitPrice: 0.01/200,freeUnits: 0}}
     */
     const priceConfig = {
-        queries: {
+        analysis: {
             unitPrice: 5,
             freeUnits: 1,
             unit: 'TiB'
-        }, // pricing info per unit amount of queries
+        }, // pricing info per unit amount of analysis
         activeStorage: {
             unitPrice: 0.02,
             freeUnits: 10,
@@ -21,15 +31,10 @@
         }, // pricing info per unit amount of older (over 3 months) stored data
         streaming: {
             unitPrice: 0.00005,
-            freeUnits: 0,
+            freeUnits: 0, 
             unit: 'MiB'
         } // pricing info per unit amount of streamed data
     };
-    /**
-    * @const {number} expectedQueryUnits - Expected amount of queries in TiB units
-    * @default 3
-    */
-    const expectedQueryUnits = 3;
     /**
     * @const {number} expectedHitSize - Expected size of hits in kiB units
     * @default 2
@@ -50,13 +55,25 @@
     } else {
         estimatedHits = totalHits3m/3 + 1/3*(totalHits3m/3 - totalHits12m/12);
     }
-    const estimatedStreamingUnits = estimatedHits*expectedHitSize/1024;
-    const estimatedActiveStorageUnits = estimatedStreamingUnits*3/1024;
-    const estimatedLongTermStorageUnits = estimatedStreamingUnits*9/1024;
-    const estimatedPriceQueries = Math.max(0,(expectedQueryUnits - priceConfig['queries']['freeUnits']))*priceConfig['queries']['unitPrice'];
+    const estimatedMonthlyUnits = estimatedHits*expectedHitSize/1024;
+    const estimatedActiveStorageUnits = estimatedMonthlyUnits*3/1024;
+    const estimatedLongTermStorageUnits = estimatedMonthlyUnits*9/1024;
+    const estimatedAnalysisUnits = (expectedAnalysisAmount === 'low' ? estimatedMonthlyUnits/(1024*1024) : 
+        (expectedAnalysisAmount === 'high' ? 50*estimatedMonthlyUnits/(1024*1024) : 10*estimatedMonthlyUnits/(1024*1024)));
+    const estimatedPriceAnalysis = Math.max(0,(estimatedAnalysisUnits - priceConfig['analysis']['freeUnits']))*priceConfig['analysis']['unitPrice'];
     const estimatedPriceActiveStorage = Math.max(0,(estimatedActiveStorageUnits - priceConfig['activeStorage']['freeUnits']))*priceConfig['activeStorage']['unitPrice'];
     const estimatedPriceLongTermStorage = Math.max(0,(estimatedLongTermStorageUnits - priceConfig['longTermStorage']['freeUnits']))*priceConfig['longTermStorage']['unitPrice'];
-    const estimatedPriceStreaming = Math.max(0,(estimatedStreamingUnits - priceConfig['streaming']['freeUnits']))*priceConfig['streaming']['unitPrice'];
-    const estimatedTotalPrice = estimatedPriceQueries + estimatedPriceActiveStorage + estimatedPriceLongTermStorage + estimatedPriceStreaming;
-    waaila.message('The estimated monthly price is ' + estimatedTotalPrice.toFixed(2) + ' USD for ' + (estimatedHits/1000000).toFixed(3) + ' million hits monthly.')
+    const estimatedPriceImport = dataImportMethod === 'streaming' ? Math.max(0,(estimatedMonthlyUnits - priceConfig['streaming']['freeUnits']))*priceConfig['streaming']['unitPrice'] : 0;
+    const estimatedTotalPrice = estimatedPriceAnalysis + estimatedPriceActiveStorage + estimatedPriceLongTermStorage + estimatedPriceImport;
+    
+    const dataImportResource = 'data import (configured method: ' + dataImportMethod + (dataImportMethod === 'streaming' ? ')' : ' - limit: 1 million hits)');
+    const tableData = [
+        {resource: 'analysis (configured usage: ' + expectedAnalysisAmount + ')', 'estimated size': estimatedAnalysisUnits.toFixed(2), units: 'TiB', 'estimated price': estimatedPriceAnalysis.toFixed(2)}, 
+        {resource: 'active storage', 'estimated size': estimatedActiveStorageUnits.toFixed(2), units: 'GiB', 'estimated price': estimatedPriceActiveStorage.toFixed(2)},
+        {resource: 'long-term storage (expected 1-year data retention)', 'estimated size': estimatedLongTermStorageUnits.toFixed(2), units: 'GiB', 'estimated price': estimatedPriceLongTermStorage.toFixed(2)}, 
+        {resource: dataImportResource, 'estimated size': estimatedMonthlyUnits.toFixed(2), units: 'MiB', 'estimated price': estimatedPriceImport.toFixed(2)},
+        {resource: 'TOTAL', 'estimated size': '-', units: '-', 'estimated price': estimatedTotalPrice.toFixed(2)}
+    ];
+    waaila.message('The estimated monthly price is <b>' + estimatedTotalPrice.toFixed(2) + ' USD</b> for ' + (estimatedHits/1000000).toFixed(3) + ' million hits monthly.');
+    waaila.table(tableData);
 }

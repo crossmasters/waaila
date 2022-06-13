@@ -6,7 +6,8 @@
 **maximal test score:** 80  
 **test language:** en  
 ## Description:  
-To reduce the length of the URL and to avoid duplicate data, Pageviews dimension page should not contain “utm”, “fbclid” or “gclid” (Facebook click ID, Google Click ID) because they are already automatically separated account and they are used in separate dimensions.   
+To reduce the length of the URL and to avoid duplicate data, Pageviews dimension page should not contain “utm”, “fbclid”, “gclid”, “sznclid” or “msclkid” (Facebook click ID, Google Click ID, Seznam Click ID and Microsoft Click ID) because they are already automatically separated account and they are used in separate dimensions. 
+<further-info>    
 ## Constants:  
 ### nrPagesDisplayed
 **type:** number  
@@ -14,9 +15,9 @@ To reduce the length of the URL and to avoid duplicate data, Pageviews dimension
 **example:** 10  
 ## Blocks:  
 ### 1 - assert
-**description:** It checks if Pages dimension contains the “utm”, “fbclid” or “gclid”  parameters, in order to remove them.  
+**description:** It checks if Pages dimension contains the “utm”, “fbclid”, “gclid”, “sznclid” or “msclkid”  parameters, in order to remove them.  
 **score:** 80  
-**pass message:** No pages were found that contain utm, fclid or gclid  
-**fail message:** Pages were found that contain utm, fclid or gclid  
+**pass message:** No pages were found that contain utm, fclid, gclid, sznclid or msclkid  
+**fail message:** Pages were found that contain utm, fclid, gclid, sznclid or msclkid  
 **how to fix message:** It needs to be checked if syntax of URL is correct, there should be question marks used to separate query parameters or hash. Exclude parameters in view settings, type them in field „Strip out URL query parameters“ separated by comma.  
-**table displayed in case of failure:** Example of pages with utm, fclid or gclid (${actualPageLength}/${lengthAddInfo}${filteredPageLength})  
+**table displayed in case of failure:** Example of pages with utm, fclid, gclid, sznclid or msclkid (${actualPageLength}/${lengthAddInfo}${filteredPageLength})  
