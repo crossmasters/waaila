@@ -1,0 +1,37 @@
+{
+  "requests": [
+    {
+      "id": "events",
+      "queries": [
+        {
+          "dateRanges": [
+            {
+              "startDate": "28daysAgo",
+              "endDate": "yesterday"
+            },
+            {
+              "startDate": "yesterday",
+              "endDate": "yesterday"
+            }
+          ],
+          "metrics": [
+            {
+              "expression": "ga:totalEvents"
+            }
+          ],
+          "dimensions": [
+            {
+              "name": "ga:eventCategory"
+            }
+          ],
+          "orderBys": [
+            {
+              "fieldName": "ga:totalEvents",
+              "sortOrder": "DESCENDING"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

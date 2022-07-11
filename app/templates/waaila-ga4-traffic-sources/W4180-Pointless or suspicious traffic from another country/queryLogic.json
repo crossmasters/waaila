@@ -1,0 +1,30 @@
+{
+      "dateRanges": [
+        {
+          "startDate": "3daysAgo",
+          "endDate": "yesterday"
+        }
+      ],
+      "metrics": [
+        {
+          "name": "sessions"
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "hostname"
+        },
+        {
+          "name": "country"
+        }
+      ],
+      "orderBys": [
+        {
+          "metric": {
+            "metricName": "sessions"
+          },
+          "desc": true
+        }
+      ], 
+      "limit": "30"
+    }

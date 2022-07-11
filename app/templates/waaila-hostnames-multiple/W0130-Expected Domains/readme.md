@@ -13,11 +13,11 @@ This test depends on your insertion of acceptable values of hostnames in the dat
 ### necessaryDomainsArray
 **type:** array  
 **description:** list of domains that are required to be present in the data  
-**example:** ["main-domain.com", "other-domain.com"]  
+**example:** "['main-domain.com', 'other-domain.com']"  
 ### permittedDomainsArray
 **type:** array  
 **description:** list of all domains that are allowed to be present in the data (N/A denotes undefined value)  
-**example:** ["main-domain.com", "other-domain.com", "N/A"]  
+**example:** "['main-domain.com', 'other-domain.com', 'N/A']"  
 ## Blocks:  
 ### 1 - assert
 **description:** Check that none of the necessary domains disappeared.  

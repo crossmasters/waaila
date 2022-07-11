@@ -11,7 +11,7 @@ Google Analytics properties contain views of the data. The views' information ne
 ### expectedProfileTypes
 **type:** array  
 **description:** Set of main view types that are expected to be present, this can be extended based on client needs, eg. backup, bckp, test,...  
-**example:** ["master", "raw"]  
+**example:** "['master', 'raw']"  
 ## Blocks:  
 ### 1 - warn
 **description:** Prepares data and checks presence of expected profile types  

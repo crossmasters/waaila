@@ -2,7 +2,7 @@
 ## Main info:  
 **created at:** 2021-05-19T16:00:00  
 **test type:** info  
-**test version:** 3  
+**test version:** 2  
 **maximal test score:** 0  
 **test language:** en  
 ## Description:  
@@ -10,16 +10,16 @@ The price of BigQuery export can be calculated based on the traffic and storage 
 ## Constants:  
 ### expectedAnalysisAmount
 **type:** string  
-**description:** Expected amount of analysis (queries) you run on your data in BigQuery, options: 'low' (around the monthly amount of data), 'average' (around 10 times the monthly amount of data), 'high' (around 50 times the monthly amount of data)   
-**example:** average  
+**description:** Expected amount of analysis (queries) you run on your data in BigQuery, options: 'low' (around the monthly amount of data), 'average' (around 10 times the monthly amount of data), 'high' (around 50 times the monthly amount of data)  
+**example:** "average"  
 ### dataImportMethod
 **type:** string  
 **description:** Used method of GA data import, options: 'streaming', 'batchLoad' (for more information https://cloud.google.com/bigquery/docs/loading-data)  
-**example:** streaming  
+**example:** "streaming"  
 ### priceConfig
 **type:** object  
 **description:** Settings of the prices for Big Query price calculation  
-**example:** "{queries: {unitPrice: 5,freeUnits: 1}, activeStorage: {unitPrice: 0.02,freeUnits: 10}, longTermStorage: {unitPrice: 0.01,freeUnits: 10}, streaming: {unitPrice: 0.01/200,freeUnits: 0}}"  
+**example:** "{analysis: {unitPrice: 5,freeUnits: 1}, activeStorage: {unitPrice: 0.02,freeUnits: 10}, longTermStorage: {unitPrice: 0.01,freeUnits: 10}, streaming: {unitPrice: 0.01/200,freeUnits: 0}}"  
 ### expectedHitSize
 **type:** number  
 **description:** Expected size of hits in kiB units  

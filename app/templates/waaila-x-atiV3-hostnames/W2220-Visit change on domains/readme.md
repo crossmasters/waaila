@@ -15,7 +15,7 @@ Compare measured domains and verify that every domain has similar traffic as dur
 ### excludedDomainsArray
 **type:** array  
 **description:** list of domains that should not excluded from the check, use empty list for no exclusion   
-**example:** ["N/A", "some-other-domain.cz"]  
+**example:** "['N/A','some-other-domain.cz']"  
 ## Blocks:  
 ### 1 - assert
 **description:** Checks that every non-excluded domain has similar traffic as during the same day previous week  

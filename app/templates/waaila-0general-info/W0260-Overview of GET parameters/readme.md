@@ -7,10 +7,16 @@
 **test language:** en  
 ## Description:  
 GET parameters are used when performing HTTP request via a browser. Without them, it is not possible to see if your parameters are correctly set to track your website, or to see how users are moving on the website. Allowing dynamics URLs, the overview of those parameters is allowing you to know the parameters used in your URLs for you to exclude according to your objectives. That will help to reduce granularity of pages in GA reports.  
+## Constants:  
+### minParameterPageviews
+**type:** number  
+**description:** minimum amount of pageviews with given parameter to include the parameter in report  
+**example:** 100  
+### nrSamplePaths
+**type:** number  
+**description:** number of paths displayed for each parameter  
+**example:** 10  
 ## Blocks:  
 ### 1 - info
-**description:** Table with sample of parameters found and their frequency (page views)  
-**score:** 0  
-### 2 - info
-**description:** List of all parameters found  
+**description:** Tables with samples of paths for the parameters found and their frequency (page views)  
 **score:** 0  

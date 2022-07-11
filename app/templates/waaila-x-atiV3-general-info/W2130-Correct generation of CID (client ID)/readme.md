@@ -15,7 +15,7 @@ There must be significantly more visits than visitors. If it doesn't hold, it me
 ### excludedDevicesArray
 **type:** array  
 **description:** devices listed in this array are excluded from the comparison, use empty list for no exclusion  
-**example:** ["N/A"]  
+**example:** "['N/A']"  
 ## Blocks:  
 ### 1 - assert
 **description:** It compares the number of visitors on the website to the amount of visits generated. The total amount of visits should be higher than the total number of visitors. If the ratio is below 1.05, the test fails.  

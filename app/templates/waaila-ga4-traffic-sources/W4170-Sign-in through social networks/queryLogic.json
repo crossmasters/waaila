@@ -1,0 +1,48 @@
+{
+  "dateRanges": [
+    {
+      "startDate": "28daysAgo",
+      "endDate": "yesterday"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "sessions"
+    }
+  ],
+  "dimensions": [
+    {
+      "name": "pageReferrer"
+    },
+    {
+      "name": "source"
+    }
+  ],
+  "dimensionFilter": {
+    "orGroup": {
+      "expressions": [
+        {
+          "filter": {
+            "fieldName": "source",
+            "stringFilter": {
+              "matchType": "CONTAINS",
+              "value": "accounts.google.com"
+            }
+          }
+        },
+        {
+          "filter": {
+            "fieldName": "pageReferrer",
+            "stringFilter": {
+              "matchType": "PARTIAL_REGEXP",
+              "value": "facebook.*auth"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "metricAggregations": [
+    "TOTAL"
+  ]
+}

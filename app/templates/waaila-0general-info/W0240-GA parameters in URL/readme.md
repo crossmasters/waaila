@@ -6,8 +6,7 @@
 **maximal test score:** 80  
 **test language:** en  
 ## Description:  
-To reduce the length of the URL and to avoid duplicate data, Pageviews dimension page should not contain “utm”, “fbclid”, “gclid”, “sznclid” or “msclkid” (Facebook click ID, Google Click ID, Seznam Click ID and Microsoft Click ID) because they are already automatically separated account and they are used in separate dimensions. 
-<further-info>    
+To reduce the length of the URL and to avoid duplicate data, Pageviews dimension page should not contain “utm”, “fbclid”, “gclid”, “sznclid” or “msclkid” (Facebook click ID, Google Click ID, Seznam Click ID and Microsoft Click ID) because they are already automatically separated account and they are used in separate dimensions.   
 ## Constants:  
 ### nrPagesDisplayed
 **type:** number  
