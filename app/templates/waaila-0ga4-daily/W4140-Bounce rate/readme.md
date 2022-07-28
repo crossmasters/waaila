@@ -6,7 +6,7 @@
 **maximal test score:** 70  
 **test language:** en  
 ## Description:  
-Bounce rate reflects a single page session. These sessions happen when a customer visits certain page and closes it without clicking on any link or doing any action. A too low or too high bounce rate on your website or a specific web page might indicate a measurement issue. A step-by-step guide for anomaly detection in Waaila can be found in the <a href=https://waaila.com/en/docs/waaila/writing/anomaly-detection/#isdayofweekanomaly target = _blank>documentation</a>.  
+Bounce rate reflects a single page session. These sessions happen when a customer visits certain page and closes it without clicking on any link or doing any action. A too low or too high bounce rate on your website or a specific web page might indicate a measurement issue. A step-by-step guide for anomaly detection in Waaila can be found in the <a href=https://waaila.com/en/docs/waaila/testLogic/AI-functions/#waailafunctionsisdayofweekanomaly target = _blank>documentation</a>.  
 ## Constants:  
 ### anomalyDetectionConfig
 **type:** array  

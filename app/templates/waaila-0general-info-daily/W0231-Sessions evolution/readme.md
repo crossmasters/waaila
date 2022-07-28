@@ -6,7 +6,7 @@
 **maximal test score:** 150  
 **test language:** en  
 ## Description:  
-Observe the users' interaction on your website. Measure the sessions made by users over past months and based on the weekly pattern compare to the last observed value. If the last value is sufficiently far from the expected value, the test fails. A step-by-step guide can be found in the <a href=https://waaila.com/en/docs/waaila/writing/anomaly-detection/#isdayofweekanomaly target = _blank>documentation</a>.  
+Observe the users' interaction on your website. Measure the sessions made by users over past months and based on the weekly pattern compare to the last observed value. If the last value is sufficiently far from the expected value, the test fails. A step-by-step guide can be found in the <a href=https://waaila.com/en/docs/waaila/testLogic/AI-functions/#waailafunctionsisdayofweekanomaly target = _blank>documentation</a>.  
 ## Constants:  
 ### anomalyDetectionConfig
 **type:** object  

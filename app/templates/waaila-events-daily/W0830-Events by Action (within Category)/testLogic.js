@@ -97,7 +97,7 @@
 			})
 		})
 		const eventCombinationsUnexpected = eventsYesterday.filter(row => row['unexpected']);
-		const fail_message_unexpected = '2) There are some unexpected event category-action combinations missing in the data yesterday: ';
+		const fail_message_unexpected = '2) There are some unexpected event category-action combinations in the data yesterday: ';
 		waaila.assert(eventCombinationsUnexpected.length === 0, 50).fail.message(fail_message_unexpected).table(eventCombinationsUnexpected);
 
 		/**
@@ -118,6 +118,6 @@
 		const fail_message_anomaly = '3) Some required event category-action combinations yesterday have less than ' + minShareToDailyAverage*100 + ' % of the daily average last 28 days: ';
 		waaila.assert(eventsFiltered.length === 0, 50)
 			.fail.message(fail_message_anomaly)
-			.table(eventsYesterday.filter(row => row['isRequired']), [{ 'column': 'belowLimit', 'condition': { 'EQUAL': false } }]);
+			.table(eventsYesterday.filter(row => row['isRequired']), [{ column: 'belowLimit', cellColor: { condition: { EQUAL: false } } }]);
 	}	
 }

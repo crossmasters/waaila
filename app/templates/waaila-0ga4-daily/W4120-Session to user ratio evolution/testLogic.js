@@ -29,6 +29,6 @@
 
         const processedDataLastDay = processedData['data'].filter(row => row['isAnomaly'] != null)
             .order(['expectedValue'], true);
-        waaila.table(processedDataLastDay, [{ 'column': 'isAnomaly', 'condition': { 'EQUAL': false } }]);
+        waaila.table(processedDataLastDay, [{ column: 'isAnomaly', cellColor: { condition: { EQUAL: false } } }]);
     }
 }
