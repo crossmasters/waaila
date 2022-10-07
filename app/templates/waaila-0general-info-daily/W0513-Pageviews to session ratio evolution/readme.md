@@ -2,7 +2,7 @@
 ## Main info:  
 **created at:** 2021-03-01T00:00:00  
 **test type:** assertion  
-**test version:** 8  
+**test version:** 9  
 **maximal test score:** 80  
 **test language:** en  
 ## Description:  

@@ -2,7 +2,7 @@
 ## Main info:  
 **created at:** 2022-05-31T11:22:14.0336709Z  
 **test type:** warning  
-**test version:** 7  
+**test version:** 8  
 **maximal test score:** 80  
 **test language:** en  
 ## Description:  
@@ -17,6 +17,6 @@ There is a limit on the BigQuery Export. If the daily export exceed 1 million ev
 **description:** Official caps on the amount timing hits processed daily based on the amount of pageview hits (https://developers.google.com/analytics/devguides/collection/analyticsjs/user-timings#sampling_considerations)  
 **example:** "[{min: 0, max: 100000, value: 10000}, {min: 100000, multiple: 0.01}]"  
 ## Blocks:  
-### 1 - assert
+### 1 - warn
 **description:** Evaluate daily limit  
 **score:** 80  

@@ -9,7 +9,7 @@
     * @default 1.4
     */
     const upperRatioThreshold = 1.4;
-    
+
     /**
     * @assert 1 - If the total of the sessions for the latest week is not between 70% and 140% of the weekly average, it can be due to a successful campaign implemented or an error in measurement or a deeper issue that needs to be investigated.
     * @score 150
@@ -19,10 +19,24 @@
     const sessions28d = +sessions28dSummary['sessions']['total'];
     const sessions7avg = sessions28d / 4;
     const sessions7d = +sessions7dSummary['sessions']['total'];
-    
-    const assert_pass_message = `Sessions this week do not differ significantly from weekly average last month (they are between ${lowerRatioThreshold*100} and ${upperRatioThreshold*100} % of average sessions for a week)`;
-    const assert_fail_message = `Sessions this week are not between ${lowerRatioThreshold*100} and ${upperRatioThreshold*100} % of average sessions for a week`;
+    const tableData = [
+        {
+            'metric name': 'sessions', 'values last week': sessions7d, 'values last month': sessions28d,
+            'average weekly values last month': sessions7avg, 'share to average': sessions7d / sessions7avg
+        }
+    ];
+    const tableFormatting = [
+        { column: 'values last week', numberFormat: { style: 'decimal' } },
+        { column: 'values last month', numberFormat: { style: 'decimal' } },
+        { column: 'average weekly values last month', numberFormat: { style: 'decimal' } },
+        { column: 'share to average', numberFormat: { style: 'percent' } }
+    ];
+
+    const assert_pass_message = `Sessions this week do not differ significantly from weekly average last month (they are between ${lowerRatioThreshold * 100} and ${upperRatioThreshold * 100} % of average sessions for a week)`;
+    const assert_fail_message = `Sessions this week are not between ${lowerRatioThreshold * 100} and ${upperRatioThreshold * 100} % of average sessions for a week`;
     const assert_fail_howtofix = 'Check, if the GA code is triggered on the website.';
     waaila.assert((sessions7d > sessions7avg * lowerRatioThreshold) && (sessions7d < sessions7avg * upperRatioThreshold), 150)
-        .pass.message(assert_pass_message).fail.message(assert_fail_message + '<br/><br/> How to fix: <br/>' +  assert_fail_howtofix);
+        .pass.message(assert_pass_message)
+        .fail.message(assert_fail_message + '<br/><br/> How to fix: <br/>' + assert_fail_howtofix)
+        .table(tableData, tableFormatting);
 }

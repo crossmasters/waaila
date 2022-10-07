@@ -1,0 +1,16 @@
+{
+	"dateRanges": [
+		{
+			"startDate": "yesterday",
+			"endDate": "yesterday"
+		}
+	],
+	"metrics": [
+		{
+			"name": "eventCount"
+		}
+	],
+	"metricAggregations": [
+		"TOTAL"
+	]
+}

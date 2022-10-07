@@ -16,7 +16,7 @@
     ];
     
     /**
-    * @assert 1 - Evaluate daily limit
+    * @warn 1 - Evaluate daily limit
     * @score 80
     */
     const data90d = waaila.functions.normalizeGaResult(results['request1'][0]);

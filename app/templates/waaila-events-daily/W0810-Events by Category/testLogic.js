@@ -22,7 +22,7 @@
 
 	// Transform the data
 	const eventsLast28days = waaila.functions.normalizeGaResult(results['events'][0], 0);
-	const eventsYesterday = waaila.functions.normalizeGaResult(results['events'][0], 1);
+	var eventsYesterday = waaila.functions.normalizeGaResult(results['events'][0], 1);
 	
 	if (requiredEventCombinations.length === 0) {
 		/**
@@ -90,10 +90,18 @@
 				}
 			})
 		})
-		const eventsFiltered = eventsYesterday.filter(row => (row['belowLimit']) && (row['isRequired']));
-		const fail_message_anomaly = '3) Some required event categories yesterday have less than ' + minShareToDailyAverage*100 + ' % of the daily average last 28 days: ';
-		waaila.assert(eventsFiltered.length === 0, 50)
+		eventsYesterday = eventsYesterday.filter(row => row['isRequired'])
+		eventsYesterday.forEach(row => {
+			delete row['isRequired'];
+			delete row['unexpected'];
+		});
+		const tableFormatting = [
+			{ column: 'belowLimit', cellColor: { condition: { EQUAL: false } } },
+			{ column: 'eventsShare', numberFormat: { style: 'percent' } }
+		];
+		const fail_message_anomaly = '3) Some required event categories yesterday have less than ' + minShareToDailyAverage * 100 + ' % of the daily average last 28 days: ';
+		waaila.assert(eventsYesterday.filter(row => row['belowLimit']).length === 0, 50)
 			.fail.message(fail_message_anomaly)
-			.table(eventsYesterday.filter(row => row['isRequired']), [{ column: 'belowLimit', cellColor: { condition: { EQUAL: false } } }]);
+			.table(eventsYesterday, tableFormatting);
 	}	
 }

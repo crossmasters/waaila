@@ -19,6 +19,14 @@
     const valueColumnName = anomalyDetectionConfig['valueColumn'];
     const assert_pass_message = `No anomalies detected in the ${valueColumnName}`;
     const assert_fail_message = `There was an anomaly in the ${valueColumnName}`;
+    const tableFormatting = [
+        { column: valueColumnName, numberFormat: { style: 'decimal' } },
+        { column: 'expectedValue', numberFormat: { style: 'decimal' } },
+        { column: 'lowerBound', numberFormat: { style: 'decimal' } },
+        { column: 'upperBound', numberFormat: { style: 'decimal' } },
+        { column: 'shareOfExpectedValue', numberFormat: { style: 'percent' } },
+        { column: 'isAnomaly', cellColor: { condition: { EQUAL: false } } }
+    ];
     
     if (processedData['data'].length === 0) {
         waaila.table(processedData);
@@ -29,6 +37,11 @@
 
         const processedDataLastDay = processedData['data'].filter(row => row['isAnomaly'] != null)
             .order(['expectedValue'], true);
-        waaila.table(processedDataLastDay, [{ column: 'isAnomaly', cellColor: { condition: { EQUAL: false } } }]);
+        processedDataLastDay.forEach(row => {
+            row['shareOfExpectedValue'] = row[valueColumnName]/row['expectedValue'];
+            delete row['isNegativeAnomaly'];
+            delete row['isPositiveAnomaly'];
+        })
+        waaila.table(processedDataLastDay, tableFormatting);
     }
 }

@@ -24,7 +24,7 @@
           "dimension": {
             "dimensionName": "date"
           },
-          "desc": false
+          "desc": true
         }
       ]
     }

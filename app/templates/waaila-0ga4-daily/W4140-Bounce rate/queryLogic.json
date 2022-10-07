@@ -8,6 +8,9 @@
       "metrics": [
         {
           "name": "bounceRate"
+        },
+        {
+          "name": "eventCount"
         }
       ],
       "dimensions": [
@@ -23,12 +26,10 @@
           "dimension": {
             "dimensionName": "date"
           },
-          "desc": false
+          "desc": true
         }
       ],
       "metricAggregations": [
-        "TOTAL",
-        "MINIMUM",
-        "MAXIMUM"
+        "TOTAL"
       ]
     }

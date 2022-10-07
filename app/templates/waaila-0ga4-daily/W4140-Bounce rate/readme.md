@@ -2,7 +2,7 @@
 ## Main info:  
 **created at:** 2022-04-27T07:05:48.7331608Z  
 **test type:** assertion  
-**test version:** 3  
+**test version:** 6  
 **maximal test score:** 70  
 **test language:** en  
 ## Description:  
@@ -12,6 +12,10 @@ Bounce rate reflects a single page session. These sessions happen when a custome
 **type:** array  
 **description:** Settings of the anomaly detection analysis  
 **example:** "{valueColumn: 'bounceRate'}"  
+### minRelevantDailyEvents
+**type:** number  
+**description:** Minimal daily amount of events to include for the analysis  
+**example:** 100  
 ## Blocks:  
 ### 1 - assert
 **description:** Analyze the evolution of bounce rate  
