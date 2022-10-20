@@ -1,0 +1,30 @@
+{
+  "requests": [{
+    "id": "request1",
+    "queries": [{
+      "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }],
+      "metrics": [
+      {
+        "expression": "ga:hits"
+      }]
+    }]
+  },
+  {
+    "id": "request2",
+    "queries": [{
+      "dateRanges": [
+      {
+        "startDate": "360daysAgo",
+        "endDate": "yesterday"
+      }],
+      "metrics": [
+      {
+        "expression": "ga:hits"
+      }]
+    }]
+  }]
+}

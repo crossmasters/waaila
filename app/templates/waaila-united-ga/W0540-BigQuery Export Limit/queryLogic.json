@@ -1,0 +1,42 @@
+{
+  "requests": [{
+    "id": "request1",
+    "queries": [{
+      "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }],
+      "metrics": [
+      {
+        "expression": "ga:hits"
+      },
+      {
+        "expression": "ga:pageviews"
+      },
+      {
+        "expression": "ga:screenviews"
+      },
+      {
+        "expression": "ga:totalEvents"
+      },
+      {
+        "expression": "ga:transactions"
+      },
+      {
+        "expression": "ga:itemQuantity"
+      },
+      {
+        "expression": "ga:socialInteractions"
+      },
+      {
+        "expression": "ga:exceptions"
+      }],
+      "dimensions": [
+        {
+          "name": "ga:date"
+        }
+      ]
+    }]
+  }]
+}

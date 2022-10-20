@@ -1,0 +1,21 @@
+{
+	"dateRanges": [
+		{
+			"startDate": "2daysAgo",
+			"endDate": "yesterday"
+		}
+	],
+	"metrics": [
+		{
+			"name": "eventCount"
+		}
+	],
+	"dimensions": [
+		{
+			"name": "date"
+		}
+	],
+	"metricAggregations": [
+		"TOTAL"
+	]
+}

@@ -1,0 +1,43 @@
+{
+  "dateRanges": [
+    {
+      "startDate": "28daysAgo",
+      "endDate": "yesterday"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "transactions"
+    }
+  ],
+  "dimensions": [
+    {
+      "name": "transactionId"
+    }
+  ],
+  "metricFilter": {
+    "filter": {
+      "fieldName": "transactions",
+      "numericFilter": {
+        "operation": "GREATER_THAN",
+        "value": {
+          "int64Value": "1"
+        }
+      }
+    }
+  },
+  "dimensionFilter": {
+    "notExpression": {
+      "filter": {
+        "fieldName": "transactionId",
+        "stringFilter": {
+          "matchType": "EXACT",
+          "value": "(other)"
+        }
+      }
+    }
+  },
+  "metricAggregations": [
+    "TOTAL"
+  ]
+}

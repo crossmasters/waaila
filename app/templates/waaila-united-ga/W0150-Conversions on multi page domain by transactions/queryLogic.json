@@ -1,0 +1,21 @@
+{
+    "requests": [{
+        "id": "hostnames",
+        "queries": [{
+            "dateRanges": [
+                {
+                    "startDate": "28daysAgo",
+                    "endDate": "yesterday"
+                }],
+            "metrics": [
+                {
+                    "expression": "ga:transactions"
+                }],
+            "dimensions": [
+                {
+                    "name": "ga:hostname"
+                }],
+            "filtersExpression": "ga:hostname=@localhost|ga:hostname=@google.translate|ga:hostname=@google.we.cache"
+        }]
+    }]
+}

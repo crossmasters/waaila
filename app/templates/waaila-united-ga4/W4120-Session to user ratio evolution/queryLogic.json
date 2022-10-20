@@ -1,0 +1,30 @@
+{
+      "dateRanges": [
+        {
+          "startDate": "42daysAgo",
+          "endDate": "yesterday"
+        }
+      ],
+      "metrics": [
+        {
+          "name": "sessionUserRatio", 
+          "expression": "sessions/totalUsers"
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "date"
+        },
+        {
+          "name": "deviceCategory"
+        }
+      ],
+      "orderBys": [
+        {
+          "dimension": {
+            "dimensionName": "date"
+          },
+          "desc": true
+        }
+      ]
+    }

@@ -1,0 +1,47 @@
+{
+  "dateRanges": [
+    {
+      "startDate": "28daysAgo",
+      "endDate": "yesterday"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "screenPageViews"
+    }
+  ],
+  "dimensions": [
+    {
+      "name": "pagePath"
+    }
+  ],
+  "dimensionFilter": {
+    "andGroup": {
+      "expressions": [
+        {
+          "filter": {
+            "fieldName": "pagePath",
+            "stringFilter": {
+              "matchType": "PARTIAL_REGEXP",
+              "value": "[&\\?].*utm_"
+            }
+          }
+        },
+        {
+          "notExpression": {
+            "filter": {
+              "fieldName": "pagePath",
+              "stringFilter": {
+                "matchType": "PARTIAL_REGEXP",
+                "value": "[&\\?].*utm_(source|medium|campaign|term|content)"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "metricAggregations": [
+    "TOTAL"
+  ]
+}

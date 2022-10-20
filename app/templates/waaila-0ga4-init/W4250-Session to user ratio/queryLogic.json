@@ -1,0 +1,33 @@
+{
+  "dateRanges": [
+    {
+      "startDate": "28daysAgo",
+      "endDate": "yesterday"
+    }
+  ],
+  "metrics": [
+    {
+      "expression": "sessions/totalUsers",
+      "name": "sessionUserRatio"
+    }
+  ],
+  "dimensions": [
+    {
+      "name": "deviceCategory"
+    }
+  ],
+  "dimensionFilter": {
+    "notExpression": {
+      "filter": {
+        "fieldName": "deviceCategory",
+        "stringFilter": {
+          "matchType": "EXACT",
+          "value": "(other)"
+        }
+      }
+    }
+  },
+  "metricAggregations": [
+    "TOTAL"
+  ]
+}

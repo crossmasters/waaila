@@ -1,0 +1,38 @@
+{
+  "dateRanges": [
+    {
+      "startDate": "28daysAgo",
+      "endDate": "yesterday"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "screenPageViews"
+    }
+  ],
+  "dimensions": [
+    {
+      "name": "pagePath"
+    }
+  ],
+  "orderBys": [
+    {
+      "metric": {
+        "metricName": "screenPageViews"
+      },
+      "desc": true
+    }
+  ],
+  "dimensionFilter": {
+    "filter": {
+      "fieldName": "pagePath",
+      "stringFilter": {
+        "matchType": "PARTIAL_REGEXP",
+        "value": "(\\?|&|#)"
+      }
+    }
+  },
+  "metricAggregations": [
+    "TOTAL"
+  ]
+}

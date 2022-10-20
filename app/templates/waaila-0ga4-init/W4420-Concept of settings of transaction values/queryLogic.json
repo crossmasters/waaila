@@ -1,0 +1,22 @@
+{
+      "dateRanges": [
+        {
+          "startDate": "28daysAgo",
+          "endDate": "yesterday"
+        }
+      ],
+      "metrics": [
+        {
+          "name": "purchaseRevenue"
+        },
+        {
+          "name": "shippingAmount"
+        },
+        {
+          "name": "taxAmount"
+        },
+        {
+          "name": "itemRevenue"
+        }
+      ]
+    }

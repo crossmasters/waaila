@@ -1,0 +1,49 @@
+{
+  "requests": [{
+        "id": "transactions",
+        "queries": [{
+            "dateRanges": [
+                {
+                    "startDate": "28daysAgo",
+                    "endDate": "yesterday"
+                }],
+            "metrics": [
+                {
+                    "expression": "ga:transactionRevenue - ga:refundAmount", 
+                    "alias": "diffTransRevRefund", 
+                    "formattingType": "FLOAT" 
+                },
+                {
+                    "expression": "ga:itemRevenue - ga:refundAmount", 
+                    "alias": "diffItemRevRefund", 
+                    "formattingType": "FLOAT" 
+                }],
+            "dimensions": [
+                {
+                    "name": "ga:transactionId"
+                }],
+            "filtersExpression": "ga:refundAmount!=0"
+        },
+        {
+            "dateRanges": [
+                {
+                    "startDate": "28daysAgo",
+                    "endDate": "yesterday"
+                }],
+            "metrics": [
+                {
+                    "expression": "ga:transactionRevenue"
+                },
+                {
+                    "expression": "ga:itemRevenue"
+                },
+                {
+                    "expression": "ga:refundAmount"
+                }],
+            "dimensions": [
+                {
+                    "name": "ga:transactionId"
+                }]
+        }]
+    }]
+}

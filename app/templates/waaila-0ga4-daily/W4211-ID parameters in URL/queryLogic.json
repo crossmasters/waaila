@@ -1,0 +1,38 @@
+{
+  "dateRanges": [
+    {
+      "startDate": "3daysAgo",
+      "endDate": "yesterday"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "screenPageViews"
+    }
+  ],
+  "dimensions": [
+    {
+      "name": "pagePath"
+    }
+  ],
+  "dimensionFilter": {
+    "filter": {
+      "fieldName": "pagePath",
+      "stringFilter": {
+        "matchType": "PARTIAL_REGEXP",
+        "value": "[&\\?].*(gclid|fclid|sznclid|msclkid|utm_(source|medium|campaign|term|content))"
+      }
+    }
+  },
+  "orderBys": [
+    {
+      "metric": {
+        "metricName": "screenPageViews"
+      }, 
+      "desc": true
+    }
+  ],
+  "metricAggregations": [
+    "TOTAL"
+  ]
+}

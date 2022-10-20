@@ -1,0 +1,54 @@
+{
+  "dateRanges": [
+    {
+      "startDate": "28daysAgo",
+      "endDate": "yesterday"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "sessions"
+    }
+  ],
+  "dimensions": [
+    {
+      "name": "hostname"
+    }
+  ],
+  "dimensionFilter": {
+    "orGroup": {
+      "expressions": [
+        {
+          "filter": {
+            "fieldName": "hostname",
+            "stringFilter": {
+              "matchType": "CONTAINS",
+              "value": "localhost"
+            }
+          }
+        },
+        {
+          "filter": {
+            "fieldName": "hostname",
+            "stringFilter": {
+              "matchType": "CONTAINS",
+              "value": "google.translate"
+            }
+          }
+        },
+        {
+          "filter": {
+            "fieldName": "hostname",
+            "stringFilter": {
+              "matchType": "CONTAINS",
+              "value": "google.we.cache"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "metricAggregations": [
+    "TOTAL"
+  ]
+}

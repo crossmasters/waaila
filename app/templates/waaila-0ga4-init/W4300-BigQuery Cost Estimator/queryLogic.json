@@ -1,0 +1,21 @@
+{
+	"dateRanges": [
+		{
+			"startDate": "360daysAgo",
+			"endDate": "yesterday"
+		}
+	],
+	"metrics": [
+		{
+			"name": "eventCount"
+		}
+	],
+	"dimensions": [
+		{
+			"name": "date"
+		}
+	],
+	"metricAggregations": [
+		"TOTAL"
+	]
+}

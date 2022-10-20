@@ -1,0 +1,55 @@
+{
+	"requests": [
+		{
+			"id": "inputData",
+			"queries": [
+				{
+					"dateRanges": [
+						{
+							"startDate": "42daysAgo",
+							"endDate": "yesterday"
+						}
+					],
+					"metrics": [
+						{
+							"expression": "ga:bounceRate"
+						}
+					],
+					"dimensions": [
+						{
+							"name": "ga:hostname"
+						},
+						{
+							"name": "ga:date"
+						}
+					],
+					"orderBys": [
+						{
+							"fieldName": "ga:date", 
+							"sortOrder": "DESCENDING"
+						}
+					], 
+					"pageSize": 10000
+				},
+				{
+					"dateRanges": [
+						{
+							"startDate": "42daysAgo",
+							"endDate": "yesterday"
+						}
+					],
+					"metrics": [
+						{
+							"expression": "ga:sessions"
+						}
+					],
+					"dimensions": [
+						{
+							"name": "ga:hostname"
+						}
+					]
+				}
+			]
+		}
+	]
+}

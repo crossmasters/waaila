@@ -1,0 +1,32 @@
+{
+      "dateRanges": [
+        {
+          "startDate": "28daysAgo",
+          "endDate": "yesterday"
+        }
+      ],
+      "metrics": [
+        {
+          "name": "sessions"
+        },
+        {
+          "name": "screenPageViews"
+        },
+        {
+          "name": "transactions"
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "hostname"
+        }
+      ],
+      "orderBys": [
+        {
+          "metric": {
+            "metricName": "sessions"
+          },
+          "desc": true
+        }
+      ]
+    }

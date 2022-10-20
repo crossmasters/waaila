@@ -1,0 +1,70 @@
+{
+  "requests": [{
+        "id": "transactionSetting",
+        "queries": [{
+            "dateRanges": [
+                {
+                    "startDate": "28daysAgo",
+                    "endDate": "yesterday"
+                }],
+            "metrics": [
+                {
+                    "expression": "ga:transactionRevenue"
+                },
+                {
+                    "expression": "ga:transactionShipping"
+                },
+                {
+                    "expression": "ga:transactionTax"
+                },
+                {
+                    "expression": "ga:itemRevenue"
+                },
+                {
+                    "expression": "ga:localTransactionRevenue"
+                },
+                {
+                    "expression": "ga:localTransactionShipping"
+                },
+                {
+                    "expression": "ga:localTransactionTax"
+                },
+                {
+                    "expression": "ga:localItemRevenue"
+                },
+                {
+                    "expression": "ga:localProductRefundAmount"
+                },
+                {
+                    "expression": "ga:localRefundAmount"
+                }
+            ]
+        }, {
+            "dateRanges": [
+                {
+                    "startDate": "28daysAgo",
+                    "endDate": "yesterday"
+                }],
+            "metrics": [
+                {
+                    "expression": "ga:transactionRevenue"
+                },
+                {
+                    "expression": "ga:transactionShipping"
+                },
+                {
+                    "expression": "ga:transactionTax"
+                },
+                {
+                    "expression": "ga:itemRevenue"
+                }
+            ], 
+            "dimensions": [
+                {
+                    "name": "ga:transactionId"
+                }
+            ],
+            "pageSize": 10
+        }]
+    }]
+}

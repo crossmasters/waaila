@@ -1,0 +1,35 @@
+{
+      "dateRanges": [
+        {
+          "startDate": "42daysAgo",
+          "endDate": "yesterday"
+        }
+      ],
+      "metrics": [
+        {
+          "name": "engagementRate"
+        },
+        {
+          "name": "eventCount"
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "date"
+        },
+        {
+          "name": "hostname"
+        }
+      ],
+      "orderBys": [
+        {
+          "dimension": {
+            "dimensionName": "date"
+          },
+          "desc": true
+        }
+      ],
+      "metricAggregations": [
+        "TOTAL"
+      ]
+    }

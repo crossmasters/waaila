@@ -1,0 +1,30 @@
+{
+"requests": [{
+        "id": "viewClicks",
+        "queries": [{
+            "dateRanges": [
+                {
+                    "startDate": "28daysAgo",
+                    "endDate": "yesterday"
+                }],
+            "metrics": [
+                {
+                    "expression": "ga:internalPromotionClicks"
+                },
+                {
+                    "expression": "ga:internalPromotionViews"
+                }],
+            "dimensions": [
+                {
+                    "name": "ga:internalPromotionId"
+                },
+                {
+                    "name": "ga:internalPromotionName"
+                }], 
+             "orderBys": [{
+                    "fieldName": "ga:internalPromotionClicks", 
+                    "sortOrder": "DESCENDING"
+                }]
+        }]
+    }]
+}

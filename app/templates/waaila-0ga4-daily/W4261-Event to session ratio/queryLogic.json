@@ -1,0 +1,33 @@
+{
+  "dateRanges": [
+    {
+      "startDate": "3daysAgo",
+      "endDate": "yesterday"
+    }
+  ],
+  "metrics": [
+    {
+      "expression": "eventCount/sessions",
+      "name": "eventSessionRatio"
+    }
+  ],
+  "dimensions": [
+    {
+      "name": "deviceCategory"
+    }
+  ],
+  "dimensionFilter": {
+    "notExpression": {
+      "filter": {
+        "fieldName": "deviceCategory",
+        "stringFilter": {
+          "matchType": "EXACT",
+          "value": "(other)"
+        }
+      }
+    }
+  },
+  "metricAggregations": [
+    "TOTAL"
+  ]
+}

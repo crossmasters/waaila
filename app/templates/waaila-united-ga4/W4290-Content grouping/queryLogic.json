@@ -1,0 +1,64 @@
+{
+  "dateRanges": [
+    {
+      "startDate": "28daysAgo",
+      "endDate": "yesterday"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "screenPageViews"
+    }
+  ],
+  "dimensions": [
+    {
+      "name": "contentGroup"
+    },
+    {
+      "name": "contentId"
+    },
+    {
+      "name": "contentType"
+    }
+  ],
+  "dimensionFilter": {
+    "andGroup": {
+      "expressions": [
+        {
+          "notExpression": {
+            "filter": {
+              "fieldName": "contentGroup",
+              "stringFilter": {
+                "matchType": "EXACT",
+                "value": "(not set)"
+              }
+            }
+          }
+        },
+        {
+          "notExpression": {
+            "filter": {
+              "fieldName": "contentGroup",
+              "stringFilter": {
+                "matchType": "EXACT",
+                "value": "(other)"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "metricAggregations": [
+    "TOTAL"
+  ],
+  "orderBys": [
+    {
+      "metric": {
+        "metricName": "screenPageViews"
+      },
+      "desc": true
+    }
+  ],
+  "limit": "30"
+}

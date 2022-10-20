@@ -1,0 +1,46 @@
+{
+  "dateRanges": [
+    {
+      "startDate": "28daysAgo",
+      "endDate": "yesterday"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "sessions"
+    }
+  ],
+  "dimensions": [
+    {
+      "name": "source"
+    },
+    {
+      "name": "medium"
+    },
+    {
+      "name": "date"
+    }
+  ],
+  "dimensionFilter": {
+    "filter": {
+      "fieldName": "medium",
+      "stringFilter": {
+        "matchType": "EXACT",
+        "value": "referral"
+      }
+    }
+  },
+  "orderBys": [
+    {
+      "dimension": {
+        "dimensionName": "sessions"
+      },
+      "desc": true
+    }
+  ],
+  "metricAggregations": [
+    "TOTAL",
+    "MINIMUM",
+    "MAXIMUM"
+  ]
+}

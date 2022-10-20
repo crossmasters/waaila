@@ -1,0 +1,30 @@
+{
+  "dateRanges": [
+    {
+      "startDate": "28daysAgo",
+      "endDate": "yesterday"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "eventCount"
+    }
+  ],
+  "dimensions": [
+    {
+      "name": "eventName"
+    },
+    {
+      "name": "date"
+    }
+  ],
+  "orderBys": [
+    {
+      "metric": {
+        "metricName": "eventCount"
+      },
+      "desc": true
+    }
+  ], 
+  "limit": "20000"
+}

@@ -1,0 +1,21 @@
+{
+      "dateRanges": [
+        {
+          "startDate": "28daysAgo",
+          "endDate": "yesterday"
+        }
+      ],
+      "metrics": [
+        {
+          "name": "sessions"
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "userGender"
+        }
+      ],
+      "metricAggregations": [
+        "TOTAL"
+      ]
+    }

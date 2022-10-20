@@ -1,0 +1,16 @@
+{
+      "dateRanges": [
+        {
+          "startDate": "7daysAgo",
+          "endDate": "yesterday"
+        }
+      ],
+      "metrics": [
+        {
+          "name": "engagementRate"
+        }
+      ],
+      "metricAggregations": [
+        "TOTAL"
+      ]
+    }

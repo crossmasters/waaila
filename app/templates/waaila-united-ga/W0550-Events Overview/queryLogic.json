@@ -1,0 +1,62 @@
+{
+  "requests": [
+    {
+      "id": "events",
+      "queries": [
+        {
+          "dateRanges": [
+            {
+              "startDate": "28daysAgo",
+              "endDate": "yesterday"
+            }
+          ],
+          "metrics": [
+            {
+              "expression": "ga:totalEvents"
+            }
+          ],
+          "dimensions": [
+            {
+              "name": "ga:eventCategory"
+            },
+            {
+              "name": "ga:eventAction"
+            },
+            {
+              "name": "ga:eventLabel"
+            }
+          ],
+          "orderBys": [
+            {
+              "fieldName": "ga:totalEvents",
+              "sortOrder": "DESCENDING"
+            }
+          ], 
+          "pageSize": 100
+        },
+        {
+          "dateRanges": [
+            {
+              "startDate": "28daysAgo",
+              "endDate": "yesterday"
+            }
+          ],
+          "metrics": [
+            {
+              "expression": "ga:totalEvents"
+            }
+          ],
+          "dimensions": [
+          ],
+          "orderBys": [
+            {
+              "fieldName": "ga:totalEvents",
+              "sortOrder": "DESCENDING"
+            }
+          ], 
+          "pageSize": 100
+        }
+      ]
+    }
+  ]
+}

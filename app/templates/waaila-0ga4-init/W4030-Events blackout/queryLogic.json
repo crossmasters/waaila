@@ -1,0 +1,28 @@
+{
+	"dateRanges": [
+		{
+			"startDate": "7daysAgo",
+			"endDate": "yesterday"
+		}
+	],
+	"metrics": [
+		{
+			"name": "eventCount"
+		}
+	],
+	"dimensions": [
+		{
+			"name": "date"
+		}
+	],
+	"orderBys": [
+		{
+			"dimension": {
+				"dimensionName": "date"
+			}
+		}
+	],
+	"metricAggregations": [
+		"TOTAL"
+	]
+}
