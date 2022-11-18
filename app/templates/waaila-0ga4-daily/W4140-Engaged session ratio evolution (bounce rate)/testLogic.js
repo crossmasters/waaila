@@ -51,10 +51,10 @@
         const processedDataLastDay = processedData['data'].filter(row => row['isAnomaly'] != null)
             .order(['expectedValue'], true);
         processedDataLastDay.forEach(row => {
-            row[valueColumnName] = row[valueColumnName]/100;
-            row['expectedValue'] = row['expectedValue']/100;
-            row['lowerBound'] = row['lowerBound']/100;
-            row['upperBound'] = row['upperBound']/100;
+            row[valueColumnName] = row[valueColumnName];
+            row['expectedValue'] = row['expectedValue'];
+            row['lowerBound'] = row['lowerBound'];
+            row['upperBound'] = row['upperBound'];
             delete row['isNegativeAnomaly'];
             delete row['isPositiveAnomaly'];
         })
